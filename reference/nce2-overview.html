@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新概念英语第二册 · 总览</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --accent: #1a5276;
+    --accent2: #2980b9;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --border: #e8e6e1;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --purple: #8e44ad;
+    --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  h1 {
+    font-size: 2.2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.5rem; margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-size: 1.4rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 0.8rem;
+    padding-left: 0.6rem; border-left: 4px solid var(--accent2);
+  }
+  h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.2rem; margin-bottom: 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  .subtitle { font-size: 1.1rem; color: var(--muted); margin-bottom: 2rem; }
+
+  /* Cards */
+  .card-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem; margin: 1.5rem 0;
+  }
+  .card {
+    background: var(--card); border-radius: 12px;
+    padding: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .card h3 { margin-top: 0; font-size: 1rem; }
+  .card .num { font-size: 2rem; font-weight: 700; color: var(--accent2); display: block; }
+
+  /* Unit section */
+  .unit {
+    background: var(--card); border-radius: 12px;
+    padding: 1.2rem 1.5rem; margin-bottom: 1.2rem;
+    border-left: 5px solid var(--accent2);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .unit.u1 { border-left-color: var(--accent2); }
+  .unit.u2 { border-left-color: var(--green); }
+  .unit.u3 { border-left-color: var(--orange); }
+  .unit.u4 { border-left-color: var(--purple); }
+
+  .unit h3 { margin-top: 0; }
+  .unit .tag {
+    display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem;
+    border-radius: 20px; color: #fff; margin-left: 0.5rem;
+  }
+  .tag.u1 { background: var(--accent2); }
+  .tag.u2 { background: var(--green); }
+  .tag.u3 { background: var(--orange); }
+  .tag.u4 { background: var(--purple); }
+
+  /* Tables */
+  table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 0.5rem 0.8rem; text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--accent); color: #fff; font-weight: 600;
+  }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  /* Spiral diagram */
+  .spiral { margin: 1.5rem 0; }
+
+  /* Lists */
+  ul, ol { padding-left: 1.5rem; }
+  li { margin-bottom: 0.3rem; }
+
+  @media print {
+    body { padding: 0; }
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📘 新概念英语第二册 · 总览</h1>
+<p class="subtitle"><em>Practice & Progress</em> — 实践与进步</p>
+
+<!-- Stats -->
+<div class="card-grid">
+  <div class="card">
+    <span class="num">96</span>
+    <h3>课文</h3>
+    <p style="color:var(--muted);font-size:0.9rem">分为 4 个单元</p>
+  </div>
+  <div class="card">
+    <span class="num">~1500</span>
+    <h3>新词汇</h3>
+    <p style="color:var(--muted);font-size:0.9rem">目标词汇量 ~4000</p>
+  </div>
+  <div class="card">
+    <span class="num">24</span>
+    <h3>核心语法项目</h3>
+    <p style="color:var(--muted);font-size:0.9rem">每项循环 4 轮</p>
+  </div>
+  <div class="card">
+    <span class="num">B1</span>
+    <h3>CEFR 级别</h3>
+    <p style="color:var(--muted);font-size:0.9rem">中级入门</p>
+  </div>
+</div>
+
+<!-- What's New -->
+<h2>🎯 第二册 vs 第一册 · 有什么不同？</h2>
+<table>
+  <tr><th>维度</th><th>第一册</th><th>第二册</th></tr>
+  <tr><td>课文长度</td><td>对话为主，50-80 词</td><td>叙事短文，100-180 词</td></tr>
+  <tr><td>语法教学</td><td>单次出现</td><td>同心圆式循环深化（4 轮）</td></tr>
+  <tr><td>写作训练</td><td>简单造句</td><td>书信写作、摘要写作</td></tr>
+  <tr><td>词汇深度</td><td>日常会话词汇</td><td>叙事 + 说明文词汇</td></tr>
+  <tr><td>句子结构</td><td>简单句为主</td><td>并列句 → 复合句</td></tr>
+  <tr><td>每课结构</td><td>对话 → 练习</td><td>课文 → KS → SD → 写作 → 练习</td></tr>
+</table>
+
+<!-- Structure -->
+<h2>📐 全书结构</h2>
+<p>全书 <strong>96 课</strong>，分为 <strong>4 个单元</strong>，每单元 24 课。</p>
+
+<div class="unit u1">
+  <h3>第一单元 · Lesson 1–24 <span class="tag u1">基础构建</span></h3>
+  <p>课文约 100 词，以<strong>简单句</strong>为主。复习第一册内容，引入第二册核心语法。</p>
+  <p><strong>重点语法：</strong>基本句型语序、一般现在时 vs 现在进行时、一般过去时、现在完成时、被动语态（初次）、条件句（初次）</p>
+</div>
+
+<div class="unit u2">
+  <h3>第二单元 · Lesson 25–48 <span class="tag u2">深化拓展</span></h3>
+  <p>课文约 140 词，以<strong>并列句</strong>为主。核心语法循环出现，难度加深。</p>
+  <p><strong>重点语法：</strong>定语从句、将来完成时、虚拟条件句（对现在）、情态动词推测用法、动名词 vs 不定式</p>
+</div>
+
+<div class="unit u3">
+  <h3>第三单元 · Lesson 49–72 <span class="tag u3">复合句主导</span></h3>
+  <p>课文约 160 词，以<strong>复合句</strong>为主。语法第三次循环，引入更复杂的结构。</p>
+  <p><strong>重点语法：</strong>现在完成进行时、被动语态全时态、虚拟条件句（对过去）、使役结构 <em>have sth done</em></p>
+</div>
+
+<div class="unit u4">
+  <h3>第四单元 · Lesson 73–96 <span class="tag u4">总结复习</span></h3>
+  <p>课文约 180 词，<strong>综合运用</strong>前三单元所有语法点。不再引入全新语法。</p>
+  <p><strong>重点：</strong>全部时态综合对比、条件句全类型、间接引语高级用法、名词性从句</p>
+</div>
+
+<!-- Concentric Circle -->
+<h2>🔄 同心圆式语法教学</h2>
+<p>第二册最核心的教学法：<strong>24 个核心语法项目 × 4 轮循环</strong>。每个语法点在四个单元中各出现一次，每次深度递进。</p>
+
+<table>
+  <tr><th>语法项目</th><th>第一轮（U1）</th><th>第二轮（U2）</th><th>第三轮（U3）</th><th>第四轮（U4）</th></tr>
+  <tr><td>被动语态</td><td>L10 一般时</td><td>L34 多时态</td><td>L58 含情态动词</td><td>L93 综合</td></tr>
+  <tr><td>条件句</td><td>L16 真实条件句</td><td>L40 对现在虚拟</td><td>L64 对过去虚拟</td><td>L88 全类型</td></tr>
+  <tr><td>间接引语</td><td>L15 陈述句</td><td>L39 疑问句</td><td>L63 命令/请求</td><td>L89 高级</td></tr>
+  <tr><td>过去完成时</td><td>L14 概念引入</td><td>L38 对比深化</td><td>L62 <em>no sooner...than</em></td><td>复习</td></tr>
+  <tr><td>动名词/不定式</td><td>L20 介词后</td><td>L44 动词搭配</td><td>L68 复杂结构</td><td>复习</td></tr>
+</table>
+
+<!-- Each Lesson -->
+<h2>📖 每课标准结构</h2>
+<ol>
+  <li><strong>课文（Text）</strong> — 一篇 100-180 词的叙事短文</li>
+  <li><strong>理解与摘要（Comprehension & Summary）</strong> — 检查对课文的理解</li>
+  <li><strong>关键句型（Key Structures）</strong> — 本课核心语法点讲解与练习</li>
+  <li><strong>特殊难点（Special Difficulties）</strong> — 词汇辨析、常见错误</li>
+  <li><strong>书信写作（Letter-writing）</strong> — 英文书信格式训练</li>
+  <li><strong>练习（Exercises）</strong> — 综合练习巩固</li>
+</ol>
+
+<!-- Quick Grammar Topics -->
+<h2>⚡ 核心语法速查</h2>
+<table>
+  <tr><th>时态/结构</th><th>例句</th><th>首次出现</th></tr>
+  <tr><td>一般现在时</td><td><em>I <strong>get up</strong> at 7 every day.</em></td><td>L2</td></tr>
+  <tr><td>现在进行时</td><td><em>She <strong>is reading</strong> a book now.</em></td><td>L2</td></tr>
+  <tr><td>一般过去时</td><td><em>He <strong>went</strong> to London yesterday.</em></td><td>L3</td></tr>
+  <tr><td>现在完成时</td><td><em>I <strong>have seen</strong> that film already.</em></td><td>L4</td></tr>
+  <tr><td>过去进行时</td><td><em>I <strong>was reading</strong> when you called.</em></td><td>L7</td></tr>
+  <tr><td>过去完成时</td><td><em>He <strong>had finished</strong> before I arrived.</em></td><td>L14</td></tr>
+  <tr><td>一般将来时</td><td><em>It <strong>will rain</strong> tomorrow.</em></td><td>L12</td></tr>
+  <tr><td>将来进行时</td><td><em>I <strong>will be waiting</strong> for you.</em></td><td>L13</td></tr>
+  <tr><td>将来完成时</td><td><em>I <strong>will have finished</strong> by 5.</em></td><td>L37</td></tr>
+  <tr><td>被动语态</td><td><em>The car <strong>was stolen</strong>.</em></td><td>L10</td></tr>
+  <tr><td>虚拟条件句</td><td><em>If I <strong>were</strong> you, I would...</em></td><td>L40</td></tr>
+  <tr><td>间接引语</td><td><em>He said (that) he <strong>was</strong> tired.</em></td><td>L15</td></tr>
+</table>
+
+<h2>📚 推荐学习资源</h2>
+<ul>
+  <li><strong>教材</strong>：《朗文·外研社 新概念英语（新版）2》</li>
+  <li><strong>同步练习</strong>：《新概念英语（新版）2 同步语法练习》</li>
+  <li><strong>教师用书</strong>：含语法注释和练习答案</li>
+  <li><strong>音频</strong>：外研社官方英音/美音版 MP3</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;font-size:0.85rem">
+  新概念英语第二册 · Practice & Progress · L.G. Alexander & 何其莘 · 外研社
+</p>
+
+</div>
+</body>
+</html>

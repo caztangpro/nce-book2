@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a few / a little / a bit · 用法速查</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --accent: #1a5276;
+    --accent2: #2980b9;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --red: #c0392b;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --border: #e8e6e1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 0.8rem;
+    padding-left: 0.6rem; border-left: 4px solid var(--accent2);
+  }
+  h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.2rem; margin-bottom: 0.5rem; }
+
+  /* Decision tree */
+  .tree {
+    background: var(--card);
+    border: 2px solid var(--accent2);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+  }
+  .tree .branch { margin: 0.6rem 0; padding: 0.4rem 1rem; border-radius: 6px; }
+  .tree .q { font-weight: 700; color: var(--accent); }
+  .tree .yes { background: #eafaf1; border-left: 4px solid var(--green); }
+  .tree .no { background: #fdedec; border-left: 4px solid var(--red); }
+  .tree .result { background: #fef9e7; border: 1px solid #f0e6c0; border-radius: 8px; padding: 0.8rem 1.2rem; margin: 0.3rem 0 0.8rem 0; }
+
+  /* Card grid for comparison */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem; margin: 1rem 0;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 12px; padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .card h3 { margin-top: 0; font-size: 1rem; }
+  .card .formula { font-weight: 700; color: var(--accent2); font-size: 1.1rem; display: block; margin-bottom: 0.3rem; }
+  .card .eg { font-size: 0.9rem; color: var(--muted); }
+
+  /* General vs specific */
+  .vs-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin: 1rem 0;
+  }
+  .vs-col {
+    background: var(--card);
+    border-radius: 12px; padding: 1rem 1.2rem;
+    border: 1px solid var(--border);
+  }
+  .vs-col h4 { margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .vs-col .tag { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 20px; color: #fff; font-size: 0.75rem; margin-bottom: 0.5rem; }
+  .tag.general { background: var(--green); }
+  .tag.specific { background: var(--orange); }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+  }
+  th, td {
+    padding: 0.5rem 0.8rem; text-align: left;
+    border: 1px solid var(--border);
+  }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+  .yes-cell { color: var(--green); font-weight: 700; text-align: center; }
+  .no-cell { color: var(--red); text-align: center; }
+
+  .tip {
+    background: #f0f4f8;
+    border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+
+  .mnemonic {
+    background: var(--card);
+    border: 2px solid #f0e6c0;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .mnemonic code {
+    font-size: 1.2rem; font-weight: 700; color: var(--accent2);
+    background: #fef9e7; padding: 0.2rem 0.8rem; border-radius: 6px;
+  }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0; }
+  li { margin-bottom: 0.3rem; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  @media print {
+    body { padding: 0.5in; }
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>a few / a little / a bit / a few of</h1>
+<p class="subtitle">数量限定词用法速查 · New Concept English Book 2</p>
+
+<!-- ===== DECISION TREE ===== -->
+<h2>🌳 选择流程图</h2>
+<div class="tree">
+  <div class="branch q">后面跟的是什么词？</div>
+
+  <div class="branch yes">👇 形容词</div>
+  <div class="branch result">
+    ➡ <strong>a little</strong> / <strong>a bit</strong> + 形容词<br>
+    <em>a little tired, a bit expensive</em>
+  </div>
+
+  <div class="branch no">👇 名词？</div>
+  <div class="branch yes" style="margin-left:1.5rem;">名词前有 <strong>the / my / these / those / us / them</strong> 等限定词？</div>
+  <div class="branch result" style="margin-left:1.5rem;">
+    ➡ 用 <strong>of</strong>：<em>a few <u>of the</u> books, a bit <u>of that</u> water</em>
+  </div>
+  <div class="branch no" style="margin-left:1.5rem;">名词前没有限定词？</div>
+  <div class="branch result" style="margin-left:1.5rem;">
+    <table style="width:auto;margin:0;border:none;">
+      <tr><td style="border:none;padding:0.2rem 0.5rem;">可数复数 →</td><td style="border:none;padding:0.2rem 0.5rem;"><strong>a few</strong> <em>books</em></td></tr>
+      <tr><td style="border:none;padding:0.2rem 0.5rem;">不可数 →</td><td style="border:none;padding:0.2rem 0.5rem;"><strong>a little</strong> <em>water</em> / <strong>a bit of</strong> <em>water</em></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== COMPARISON ===== -->
+<h2>📊 四种表达对比</h2>
+
+<table>
+  <tr><th></th><th>a few</th><th>a little</th><th>a bit (of)</th><th>a few / little / bit of</th></tr>
+  <tr><td><strong>搭配名词</strong></td><td>可数复数</td><td>不可数</td><td>不可数</td><td>有限定词的任何名词</td></tr>
+  <tr><td><strong>修饰形容词</strong></td><td class="no-cell">✘</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td><td class="no-cell">✘</td></tr>
+  <tr><td><strong>加 the/my 等限定词</strong></td><td>❌</td><td>❌</td><td>❌（用 a bit of the）</td><td>✅ 必须加</td></tr>
+  <tr><td><strong>语气</strong></td><td>正式/通用</td><td>正式/通用</td><td>口语化</td><td>通用</td></tr>
+  <tr><td><strong>例句</strong></td><td>a few books</td><td>a little milk</td><td>a bit of milk / a bit tired</td><td>a few of my books</td></tr>
+</table>
+
+<!-- ===== CORE RULE: with vs without of ===== -->
+<h2>🔑 核心规则：什么时候加 of？</h2>
+
+<div class="vs-box">
+  <div class="vs-col">
+    <span class="tag general">泛指（不加 of）</span>
+    <p><strong>a few / a little / a bit of + 名词</strong></p>
+    <p>不指定是哪一些，就是"几个/一点儿"</p>
+    <hr style="margin:0.5rem 0;">
+    <p><em>I have <u>a few friends</u>.</em></p>
+    <p style="font-size:0.85rem;color:var(--muted);">我有几个朋友（泛指）</p>
+    <p><em>I need <u>a little time</u>.</em></p>
+    <p style="font-size:0.85rem;color:var(--muted);">我需要一点儿时间</p>
+  </div>
+  <div class="vs-col">
+    <span class="tag specific">特指（加 of）</span>
+    <p><strong>a few / a little / a bit of + of + 限定词 + 名词</strong></p>
+    <p>指定是"哪些中的几个/一点儿"</p>
+    <hr style="margin:0.5rem 0;">
+    <p><em>I have <u>a few of my friends</u> here.</em></p>
+    <p style="font-size:0.85rem;color:var(--muted);">我在这里有我的几个朋友（特指"我的"朋友中的几个）</p>
+    <p><em>I read <u>a bit of that book</u>.</em></p>
+    <p style="font-size:0.85rem;color:var(--muted);">那本书我看了一点儿</p>
+  </div>
+</div>
+
+<div class="tip">
+<strong>规则一：</strong> of 出现 → 后面必须有 <strong>the / my / your / these / those / us / them</strong> 等限定词<br>
+<strong>规则二：</strong> 没有限定词 → 用 <strong>不加 of</strong> 的形式
+</div>
+
+<!-- ===== POSITIVE vs NEGATIVE ===== -->
+<h2>⚠️ 注意：不加冠词时的含义翻转</h2>
+
+<table>
+  <tr><th></th><th>有 a（肯定含义）</th><th>无 a（否定含义）</th></tr>
+  <tr><td><strong>可数</strong></td><td><strong>a few</strong> = 有几个 ✅<br><em>I have a few friends.</em> 我有几个朋友</td><td><strong>few</strong> = 很少，几乎没有 ❌<br><em>I have few friends.</em> 我没什么朋友</td></tr>
+  <tr><td><strong>不可数</strong></td><td><strong>a little</strong> = 有一点 ✅<br><em>There's a little hope.</em> 还有一点希望</td><td><strong>little</strong> = 很少，几乎没有 ❌<br><em>There's little hope.</em> 没什么希望了</td></tr>
+</table>
+
+<p>这条规则 <strong>不适用于</strong> a bit → few/little 才有肯定/否定翻转；<em>a bit</em> 没有 <em>bit</em> 这种独立对应形式。</p>
+
+<!-- ===== QUICK REFERENCE ===== -->
+<h2>📋 速查表</h2>
+
+<table>
+  <tr><th>用法</th><th>例句</th></tr>
+  <tr><td>a few + 可数复数</td><td><em>I bought a few postcards.</em></td></tr>
+  <tr><td>a little + 不可数</td><td><em>I speak a little Italian.</em></td></tr>
+  <tr><td>a bit of + 不可数</td><td><em>Could I have a bit of water?</em></td></tr>
+  <tr><td>a bit + 形容词</td><td><em>It's a bit cold today.</em></td></tr>
+  <tr><td>a little + 形容词</td><td><em>She was a little nervous.</em></td></tr>
+  <tr><td>a few of + the / my / these + 可数复数</td><td><em>A few of my friends came.</em></td></tr>
+  <tr><td>a little of + the / my + 不可数</td><td><em>I've read a little of the book.</em></td></tr>
+  <tr><td>a bit of + 限定词 + 名词</td><td><em>I've read a bit of that book.</em></td></tr>
+  <tr><td>few（无 a） + 可数复数</td><td><em>Few people know this.</em>（几乎没人知道）</td></tr>
+  <tr><td>little（无 a） + 不可数</td><td><em>There is little time left.</em>（几乎没时间了）</td></tr>
+</table>
+
+<!-- ===== MNEMONIC ===== -->
+<div class="mnemonic">
+  <p>🌟 <strong>记忆口诀</strong></p>
+  <code>Few 配可数，Little 配不可数<br>Bit 最口语，形容也能用<br>如果加 of，定词必须跟</code>
+</div>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;font-size:0.85rem;">
+  学习记录：从 Lesson 3 课外交互问题整理 · 2026-06-15
+</p>
+
+</div>
+</body>
+</html>

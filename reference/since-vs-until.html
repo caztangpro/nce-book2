@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>since vs until · 用法速查</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --green: #27ae60; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 0.8rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.1rem; color: var(--accent); margin: 1rem 0 0.5rem; }
+
+  .timeline-box {
+    display: flex; align-items: center; gap: 0; margin: 1.5rem 0;
+    position: relative;
+  }
+  .timeline {
+    flex: 1; height: 4px; background: var(--accent2); position: relative;
+    border-radius: 2px;
+  }
+  .timeline .dot { position: absolute; width: 16px; height: 16px; border-radius: 50%; top: -6px; }
+  .dot.start { background: var(--green); left: 0; }
+  .dot.end { background: var(--red); right: 0; }
+  .timeline .arrow { position: absolute; top: -16px; font-size: 1.2rem; }
+  .arrow.since { left: 8px; color: var(--green); }
+  .arrow.until { right: 8px; color: var(--red); }
+
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin: 1rem 0;
+  }
+  .vs-col {
+    background: var(--card); border-radius: 12px; padding: 1rem 1.2rem;
+    border: 1px solid var(--border);
+  }
+  .vs-col h4 { margin-bottom: 0.5rem; }
+  .vs-col .tag { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 20px; color: #fff; font-size: 0.75rem; margin-bottom: 0.5rem; }
+  .tag.since { background: var(--green); }
+  .tag.until { background: var(--red); }
+  .vs-col .eg { font-size: 0.9rem; color: var(--muted); margin-top: 0.3rem; }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+  .warning {
+    background: #fdedec; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--red);
+    border-left: 4px solid var(--red);
+  }
+  .mnemonic {
+    background: var(--card); border: 2px solid #f0e6c0;
+    border-radius: 12px; padding: 1rem 1.5rem;
+    margin: 1rem 0; text-align: center;
+  }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0; }
+  li { margin-bottom: 0.3rem; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { body { padding: 0.5in; } .vs-col { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>since vs until · 时间介词辨析</h1>
+<p class="subtitle">New Concept English Book 2 · Lessons 2–5 知识补充</p>
+
+<h2>🎯 核心区别：起点 vs 终点</h2>
+
+<div class="vs-grid">
+  <div class="vs-col">
+    <span class="tag since">起点</span>
+    <h4>since = 从…开始（动作持续）</h4>
+    <p>动作从过去某点开始，<strong>一直持续到（靠近）现在</strong></p>
+    <hr style="margin:0.5rem 0;">
+    <p><em>I have studied English <u>since 2020</u>.</em></p>
+    <p class="eg">从2020年开始学→现在还学</p>
+    <p><em>He has been here <u>since Monday</u>.</em></p>
+    <p class="eg">从周一开始就在→现在还在</p>
+  </div>
+  <div class="vs-col">
+    <span class="tag until">终点</span>
+    <h4>until = 直到…为止（动作结束）</h4>
+    <p>动作持续到某点，<strong>然后停止</strong></p>
+    <hr style="margin:0.5rem 0;">
+    <p><em>I stayed in bed <u>until lunchtime</u>.</em></p>
+    <p class="eg">一直躺到午饭→然后起床</p>
+    <p><em>Wait here <u>until I come back</u>.</em></p>
+    <p class="eg">等到回来→然后不用等了</p>
+  </div>
+</div>
+
+<h2>📊 时间轴图示</h2>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;margin:1rem 0;">
+  <p style="text-align:center;font-weight:700;margin-bottom:1.5rem;">since</p>
+  <div style="display:flex;align-items:center;">
+    <div style="background:var(--green);width:20px;height:20px;border-radius:50%;flex-shrink:0;"></div>
+    <div style="flex:1;height:4px;background:linear-gradient(to right, var(--green), var(--accent2));position:relative;margin:0 0.5rem;">
+      <div style="position:absolute;top:-14px;font-size:0.85rem;color:var(--green);">起点（持续）</div>
+    </div>
+    <div style="width:20px;height:20px;border:3px dashed var(--accent2);border-radius:50%;flex-shrink:0;background:var(--card);"></div>
+    <div style="position:relative;margin-left:0.5rem;font-size:0.85rem;color:var(--accent2);">现在（还在持续）</div>
+  </div>
+
+  <p style="text-align:center;font-weight:700;margin:2rem 0 1.5rem;">until</p>
+  <div style="display:flex;align-items:center;">
+    <div style="background:var(--accent2);width:20px;height:20px;border-radius:50%;flex-shrink:0;"></div>
+    <div style="flex:1;height:4px;background:var(--accent2);position:relative;margin:0 0.5rem;">
+      <div style="position:absolute;top:-14px;font-size:0.85rem;color:var(--accent2);">持续</div>
+    </div>
+    <div style="background:var(--red);width:20px;height:20px;border-radius:50%;flex-shrink:0;"></div>
+    <div style="margin-left:0.5rem;font-size:0.85rem;color:var(--red);">终点（动作停止）</div>
+  </div>
+</div>
+
+<h2>🔑 核心区别句</h2>
+
+<div class="warning">
+  <strong>同一句话，不同介词 → 完全不同的意思：</strong><br><br>
+  <em>I waited <u>since</u> 8 o'clock.</em> → 我从8点开始等（<strong>现在还在等</strong>）<br>
+  <em>I waited <u>until</u> 8 o'clock.</em> → 我一直等到8点（<strong>然后不等了</strong>）
+</div>
+
+<h2>📋 搭配速查</h2>
+
+<table>
+  <tr><th></th><th>since</th><th>until</th></tr>
+  <tr><td>+ 时间点</td><td>✅ since 2020</td><td>✅ until 8pm</td></tr>
+  <tr><td>+ 从句</td><td>✅ since I was a child</td><td>✅ until you come back</td></tr>
+  <tr><td>+ 时间段</td><td>❌（用 for）</td><td>✅ until last year</td></tr>
+  <tr><td>主句时态</td><td>现在完成时/过去完成时</td><td>不限</td></tr>
+  <tr><td>动作状态</td><td>持续到现在（未结束）</td><td>持续到终点（已结束）</td></tr>
+</table>
+
+<div class="tip">
+💡 <strong>since vs for 也容易混淆：</strong><br>
+<u>since</u> + <strong>时间点</strong>：since <em>Monday / 2020 / I was 10</em><br>
+<u>for</u> + <strong>时间段</strong>：for <em>three days / six months / a long time</em>
+</div>
+
+<h2>📖 课文中出现的位置</h2>
+
+<table>
+  <tr><th>课文</th><th>例句</th></tr>
+  <tr><td>Lesson 2</td><td><em>I sometimes stay in bed <strong>until</strong> lunchtime.</em></td></tr>
+  <tr><td>Lesson 4</td><td><em>He has been there <strong>for</strong> six months.</em>（since 的同族用法 for）</td></tr>
+</table>
+
+<div class="mnemonic">
+  <p>🌟 <strong>记忆口诀</strong></p>
+  <code>Since 起点用到今，Until 终点停一停</code>
+  <p style="color:var(--muted);font-size:0.85rem;margin-top:0.3rem;">since = 动作滚雪球越滚越大，until = 闹钟响了该停了</p>
+</div>
+
+<h2>✏️ 常考对比</h2>
+
+<table>
+  <tr><th>since</th><th>until</th></tr>
+  <tr><td>He <u>has been</u> asleep since 9pm.</td><td>He <u>slept</u> until 9am.</td></tr>
+  <tr><td>从9点睡到现在（还睡着）</td><td>睡到9点（然后醒了）</td></tr>
+  <tr><td><u>Since</u> you arrived, I have been happy.</td><td>I was sad <u>until</u> you arrived.</td></tr>
+  <tr><td>从你来了我就一直开心（持续开心）</td><td>我一直难过直到你来（然后开心了）</td></tr>
+</table>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;font-size:0.85rem;">
+  学习记录：Lesson 5 课后主动提问 · 2026-06-15
+</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3: Please Send Me a Card · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --accent: #1a5276;
+    --accent2: #2980b9;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --border: #e8e6e1;
+    --highlight: #fef9e7;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --red: #c0392b;
+    --blue: #2e86c1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    padding-left: 0.6rem; border-left: 4px solid var(--accent2);
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin-top: 1.2rem; margin-bottom: 0.5rem; }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0; border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+
+  .irregular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.4rem; margin: 1rem 0;
+  }
+  .irr-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.5rem 1rem;
+    display: flex; gap: 0.5rem; font-size: 0.9rem;
+  }
+  .irr-item .base { font-weight: 600; min-width: 5rem; }
+  .irr-item .past { color: var(--accent2); min-width: 5rem; }
+  .irr-item .cn { color: var(--muted); }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise textarea {
+    width: 100%; min-height: 60px; padding: 0.6rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 0.95rem; font-family: inherit; resize: vertical;
+  }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem 0; }
+  li { margin-bottom: 0.3rem; }
+
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 3 · Please Send Me a Card</span>
+</div>
+
+<h1>Lesson 3: Please Send Me a Card</h1>
+<p class="lesson-meta">
+  📖 关键句型：一般过去时 (Simple Past) &nbsp;|&nbsp; 📝 第 3 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p><strong>Please send me a card</strong></p>
+<p>Postcards always spoil my holidays. Last summer, I went to Italy. I visited museums and sat in public gardens. A friendly waiter taught me a few words of Italian. Then he lent me a book. I read a few lines, but I did not understand a word. Every day I thought about postcards. My holidays passed quickly, but I did not send any cards to my friends. On the last day I made a big decision. I got up early and bought thirty-seven cards. I spent the whole day in my room, but I did not write a single card!</p>
+</div>
+<div class="zh">
+<p><strong>请给我寄一张明信片</strong></p>
+<p>明信片总是破坏我的假期。去年夏天，我去了意大利。我参观了博物馆，坐在公园里。一位友好的服务员教了我几句意大利语。然后他借给我一本书。我读了几行，但我一个字也不懂。我每天都想着明信片的事。假期过得很快，但我一张明信片也没有寄给朋友们。在最后一天，我做了一个重大决定。我早早起了床，买了37张明信片。我把自己关在房间里待了一整天，但我一张明信片也没有写成！</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item">
+    <span class="word">send</span>
+    <span class="phonetic">/send/</span>
+    <span class="def">v. 寄，发送 (sent, sent)</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">postcard</span>
+    <span class="phonetic">/ˈpəʊstkɑːd/</span>
+    <span class="def">n. 明信片</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">spoil</span>
+    <span class="phonetic">/spɔɪl/</span>
+    <span class="def">v. 破坏，搞糟 (spoilt/spoiled)</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">museum</span>
+    <span class="phonetic">/mjuːˈziːəm/</span>
+    <span class="def">n. 博物馆</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">public</span>
+    <span class="phonetic">/ˈpʌblɪk/</span>
+    <span class="def">adj. 公共的</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">friendly</span>
+    <span class="phonetic">/ˈfrendli/</span>
+    <span class="def">adj. 友好的</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">waiter</span>
+    <span class="phonetic">/ˈweɪtə/</span>
+    <span class="def">n. 服务员，侍者</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">lend</span>
+    <span class="phonetic">/lend/</span>
+    <span class="def">v. 借给 (lent, lent)</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">decision</span>
+    <span class="phonetic">/dɪˈsɪʒən/</span>
+    <span class="def">n. 决定</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">whole</span>
+    <span class="phonetic">/həʊl/</span>
+    <span class="def">adj. 整个的</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">single</span>
+    <span class="phonetic">/ˈsɪŋɡəl/</span>
+    <span class="def">adj. 单一的，唯一的</span>
+  </div>
+</div>
+
+<!-- ===== KEY STRUCTURE ===== -->
+<h2>🔑 关键句型：一般过去时 (Simple Past)</h2>
+
+<p>本课课文几乎是全用一般过去时写的。这是英语叙事最核心的时态。</p>
+
+<h3>课文中的所有过去式动词</h3>
+<div class="ks-box">
+<table>
+  <tr><th>原形</th><th>过去式</th><th>规则/不规则</th><th>课文中的句子</th></tr>
+  <tr><td>spoil</td><td>spoilt</td><td>不规则</td><td><em>Postcards always <u>spoilt</u> my holidays.</em></td></tr>
+  <tr><td>go</td><td>went</td><td>不规则</td><td><em>I <u>went</u> to Italy.</em></td></tr>
+  <tr><td>visit</td><td>visited</td><td>规则 (+ed)</td><td><em>I <u>visited</u> museums.</em></td></tr>
+  <tr><td>sit</td><td>sat</td><td>不规则</td><td><em>I <u>sat</u> in public gardens.</em></td></tr>
+  <tr><td>teach</td><td>taught</td><td>不规则</td><td><em>A friendly waiter <u>taught</u> me...</em></td></tr>
+  <tr><td>lend</td><td>lent</td><td>不规则</td><td><em>He <u>lent</u> me a book.</em></td></tr>
+  <tr><td>read</td><td>read</td><td>不规则（/red/）</td><td><em>I <u>read</u> a few lines.</em></td></tr>
+  <tr><td>think</td><td>thought</td><td>不规则</td><td><em>I <u>thought</u> about postcards.</em></td></tr>
+  <tr><td>pass</td><td>passed</td><td>规则 (+ed)</td><td><em>My holidays <u>passed</u> quickly.</em></td></tr>
+  <tr><td>make</td><td>made</td><td>不规则</td><td><em>I <u>made</u> a big decision.</em></td></tr>
+  <tr><td>get up</td><td>got up</td><td>不规则</td><td><em>I <u>got up</u> early.</em></td></tr>
+  <tr><td>buy</td><td>bought</td><td>不规则</td><td><em>I <u>bought</u> thirty-seven cards.</em></td></tr>
+  <tr><td>spend</td><td>spent</td><td>不规则</td><td><em>I <u>spent</u> the whole day...</em></td></tr>
+  <tr><td>write</td><td>wrote</td><td>不规则</td><td><em>I did not <u>write</u> a single card!</em></td></tr>
+</table>
+</div>
+
+<div class="tip">
+💡 这篇课文的"笑点"在于讽刺——作者说"I made a big decision"（买37张明信片），结果"did not write a single card"（一张都没写）。<strong>make a decision</strong> 这个短语暗示了决心很大，结果反差越大越好笑。
+</div>
+
+<h3>不规则动词是本课重点</h3>
+<p>第二册需要系统掌握不规则动词。以下是本课出现的所有不规则动词：</p>
+
+<div class="irregular-grid">
+  <div class="irr-item"><span class="base">go</span> → <span class="past">went</span> <span class="cn">去</span></div>
+  <div class="irr-item"><span class="base">sit</span> → <span class="past">sat</span> <span class="cn">坐</span></div>
+  <div class="irr-item"><span class="base">teach</span> → <span class="past">taught</span> <span class="cn">教</span></div>
+  <div class="irr-item"><span class="base">lend</span> → <span class="past">lent</span> <span class="cn">借给</span></div>
+  <div class="irr-item"><span class="base">read</span> → <span class="past">read</span> <span class="cn">阅读（/red/）</span></div>
+  <div class="irr-item"><span class="base">think</span> → <span class="past">thought</span> <span class="cn">想</span></div>
+  <div class="irr-item"><span class="base">make</span> → <span class="past">made</span> <span class="cn">做，制作</span></div>
+  <div class="irr-item"><span class="base">get up</span> → <span class="past">got up</span> <span class="cn">起床</span></div>
+  <div class="irr-item"><span class="base">buy</span> → <span class="past">bought</span> <span class="cn">买</span></div>
+  <div class="irr-item"><span class="base">spend</span> → <span class="past">spent</span> <span class="cn">花费（时间/钱）</span></div>
+  <div class="irr-item"><span class="base">write</span> → <span class="past">wrote</span> <span class="cn">写</span></div>
+  <div class="irr-item"><span class="base">spoil</span> → <span class="past">spoilt</span> <span class="cn">破坏</span></div>
+  <div class="irr-item"><span class="base">send</span> → <span class="past">sent</span> <span class="cn">寄</span></div>
+  <div class="irr-item"><span class="base">understand</span> → <span class="past">understood</span> <span class="cn">理解</span></div>
+</div>
+
+<h3>一般过去时的否定句</h3>
+<p>课文中的否定句都用 <strong>did not + 动词原形</strong>：</p>
+<ul>
+  <li><em>I <u>did not understand</u> a word.</em></li>
+  <li><em>I <u>did not send</u> any cards.</em></li>
+  <li><em>I <u>did not write</u> a single card!</em></li>
+</ul>
+
+<div class="ks-box">
+<p><strong>一般过去时公式</strong></p>
+<p>✅ 肯定句：主语 + <strong>动词过去式</strong> + ...</p>
+<p>✅ 否定句：主语 + <strong>did not (didn't)</strong> + <strong>动词原形</strong> + ...</p>
+<p>✅ 疑问句：<strong>Did</strong> + 主语 + <strong>动词原形</strong> + ...?</p>
+</div>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：写出下列动词的过去式</div>
+  <ol>
+    <li>go → ______</li>
+    <li>teach → ______</li>
+    <li>lend → ______</li>
+    <li>spend → ______</li>
+    <li>write → ______</li>
+    <li>buy → ______</li>
+    <li>send → ______</li>
+    <li>spoil → ______</li>
+    <li>visit → ______</li>
+    <li>make → ______</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. went &nbsp; 2. taught &nbsp; 3. lent &nbsp; 4. spent &nbsp; 5. wrote<br>
+    6. bought &nbsp; 7. sent &nbsp; 8. spoilt &nbsp; 9. visited &nbsp; 10. made
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：用动词的正确过去式填空</div>
+  <ol>
+    <li>I ________ (go) to the cinema last night.</li>
+    <li>She ________ (buy) a new dress yesterday.</li>
+    <li>He ________ (teach) English in China last year.</li>
+    <li>We ________ (spend) three hours on the homework.</li>
+    <li>They ________ (not / send) any postcards.</li>
+    <li>________ you ________ (write) to your mother?</li>
+    <li>She ________ (make) a cake for my birthday.</li>
+    <li>I ________ (not / understand) the question.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. went &nbsp; 2. bought &nbsp; 3. taught &nbsp; 4. spent<br>
+    5. did not send / didn't send &nbsp; 6. Did ... write<br>
+    7. made &nbsp; 8. did not understand / didn't understand
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：改错（每句有一个错误）</div>
+  <ol>
+    <li>I <u>goed</u> to Italy last summer.</li>
+    <li>She <u>teached</u> me a few words of English.</li>
+    <li>I <u>did not wrote</u> a single card.</li>
+    <li>He <u>lended</u> me his book.</li>
+    <li><u>Did you went</u> to the museum?</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>答案：</strong><br>
+    1. <u>went</u>（不是 goed，go 是不规则动词）<br>
+    2. <u>taught</u>（不是 teached，teach 是不规则动词）<br>
+    3. <u>did not write</u>（did 后面用原形）<br>
+    4. <u>lent</u>（不是 lended，lend 是不规则动词）<br>
+    5. <u>Did you go</u>（Did 后面用原形）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 4：中译英</div>
+  <ol>
+    <li>昨天我买了一本有趣的书。</li>
+    <li>她教了我几个英语单词。</li>
+    <li>我把整个下午都花在图书馆里。</li>
+    <li>他给我寄了一张明信片。</li>
+    <li>我没有理解你的问题。</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans4')">查看答案</button>
+  <div id="ans4" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. I bought an interesting book yesterday.<br>
+    2. She taught me a few English words.<br>
+    3. I spent the whole afternoon in the library.<br>
+    4. He sent me a postcard. / He sent a postcard to me.<br>
+    5. I did not understand your question.
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. <em>spend</em> 的两种用法</h3>
+<ul>
+  <li><strong>spend + 时间/金钱 + on + 名词</strong>：<em>I spent £10 <u>on</u> a book.</em></li>
+  <li><strong>spend + 时间/金钱 + doing</strong>：<em>I spent the whole day <u>writing</u> cards.</em>（课文中的用法）</li>
+</ul>
+
+<h3>2. <em>a few</em> vs <em>few</em></h3>
+<ul>
+  <li><strong>a few</strong> = 几个，一些（🟢 有肯定意味）<br><em>He taught me <u>a few</u> words.</em>（他教了我几个词——还不错）</li>
+  <li><strong>few</strong> = 很少，几乎没有（🔴 有否定意味）<br><em>He has <u>few</u> friends.</em>（他没什么朋友——带有负面含义）</li>
+</ul>
+
+<h3>3. <em>send</em> + 双宾语（间接宾语 + 直接宾语）</h3>
+<ul>
+  <li><em>Please send <u>me</u> a card.</em>（send + 人 + 物）</li>
+  <li><em>I did not send <u>any cards</u> to <u>my friends</u>.</em>（send + 物 + to + 人）</li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">send sb a card / send a card to sb</td><td class="zh">寄明信片给某人</td></tr>
+  <tr><td class="en">a few words of Italian</td><td class="zh">几句意大利语</td></tr>
+  <tr><td class="en">teach sb sth</td><td class="zh">教某人某事</td></tr>
+  <tr><td class="en">lend sb sth / lend sth to sb</td><td class="zh">把某物借给某人</td></tr>
+  <tr><td class="en">make a (big) decision</td><td class="zh">做（重大的）决定</td></tr>
+  <tr><td class="en">spend time (in) doing sth</td><td class="zh">花时间做某事</td></tr>
+  <tr><td class="en">think about</td><td class="zh">思考，想</td></tr>
+  <tr><td class="en">on the last day</td><td class="zh">在最后一天</td></tr>
+  <tr><td class="en">a friendly waiter</td><td class="zh">友好的服务员</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用英文完整回答以下问题（用一般过去时，大声说出来！）</div>
+  <ol>
+    <li>Where did you go last summer (or last holiday)?</li>
+    <li>What did you do yesterday?</li>
+    <li>Did you send any postcards on your last holiday?</li>
+    <li>What did you buy last week?</li>
+    <li>Who taught you English when you were young?</li>
+  </ol>
+  <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">
+    💡 注意：回答用过去式！<em>I went..., I visited..., I bought...</em>
+  </p>
+</div>
+
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：明信片毁掉假期的幽默故事（买了37张但一张没写）</li>
+  <li>✅ 一般过去时的肯定、否定和疑问句结构</li>
+  <li>✅ 11个不规则动词的过去式（课文中的全部）</li>
+  <li>✅ <em>did not + 动词原形</em> → 否定句公式</li>
+  <li>✅ <em>a few</em> vs <em>few</em> 的区别</li>
+  <li>✅ <em>send</em> + 双宾语结构</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 继续下一课 Lesson 4: An Exciting Trip（现在完成时）<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>

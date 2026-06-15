@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2: Breakfast or Lunch? · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --accent: #1a5276;
+    --accent2: #2980b9;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --border: #e8e6e1;
+    --highlight: #fef9e7;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;
+  }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta {
+    color: var(--muted); font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    padding-left: 0.6rem; border-left: 4px solid var(--accent2);
+  }
+  h3 {
+    font-size: 1.05rem; color: var(--accent);
+    margin-top: 1.2rem; margin-bottom: 0.5rem;
+  }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; color: var(--text); }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .ks-box code {
+    background: #eee; padding: 0.1rem 0.4rem;
+    border-radius: 4px; font-size: 0.9rem;
+  }
+
+  .exercise {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise textarea {
+    width: 100%; min-height: 60px;
+    padding: 0.6rem; border: 1px solid var(--border);
+    border-radius: 8px; font-size: 0.95rem;
+    font-family: inherit; resize: vertical;
+  }
+  .exercise .answer-box {
+    display: none;
+    margin-top: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: #eafaf1;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px;
+    cursor: pointer; font-size: 0.9rem;
+    margin-top: 0.5rem;
+    background: var(--accent2); color: #fff;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  .comparison-table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 0.5rem 0.8rem; text-align: left;
+    border: 1px solid var(--border);
+  }
+  .comparison-table th { background: var(--accent); color: #fff; }
+  .comparison-table .vs { background: #f0f4f8; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem 0; }
+  li { margin-bottom: 0.3rem; }
+
+  .tip {
+    background: #f0f4f8;
+    border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 2 · Breakfast or Lunch?</span>
+</div>
+
+<h1>Lesson 2: Breakfast or Lunch?</h1>
+<p class="lesson-meta">
+  📖 关键句型：现在进行时 vs 一般现在时 &nbsp;|&nbsp; 📝 第 2 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p>It was Sunday. I never get up early on Sundays. I sometimes stay in bed until lunchtime. Last Sunday I got up very late. I looked out of the window. It was dark outside. 'What a day!' I thought. 'It's raining again.' Just then, the telephone rang. It was my aunt Lucy. 'I've just arrived by train,' she said. 'I'm coming to see you.'</p>
+<p>'But I'm still having breakfast,' I said.</p>
+<p>'What are you doing?' she asked.</p>
+<p>'I'm having breakfast,' I repeated.</p>
+<p>'Dear me!' she said. 'Do you always get up so late? It's one o'clock!'</p>
+</div>
+<div class="zh">
+<p>那是个星期天。我从不在星期天早起。我有时一直躺到午饭时间。上个星期天我起得很晚。我望出窗外。外面一片漆黑。"什么鬼天气！"我想。"又下雨了。"正在这时，电话铃响了。是我姑母露西打来的。"我刚下火车，"她说。"我正要来看你。"</p>
+<p>"但我还在吃早饭呢，"我说。</p>
+<p>"你在干什么？"她问道。</p>
+<p>"我在吃早饭，"我又说了一遍。</p>
+<p>"天哪！"她说。"你总是起得这么晚吗？现在都一点了！"</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item">
+    <span class="word">until</span>
+    <span class="phonetic">/ənˈtɪl/</span>
+    <span class="def">prep. 直到</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">outside</span>
+    <span class="phonetic">/ˌaʊtˈsaɪd/</span>
+    <span class="def">adv. 外面</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">ring</span>
+    <span class="phonetic">/rɪŋ/</span>
+    <span class="def">v. 响铃 (rang, rung)</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">aunt</span>
+    <span class="phonetic">/ɑːnt/</span>
+    <span class="def">n. 姑母，姨母</span>
+  </div>
+  <div class="vocab-item">
+    <span class="word">repeat</span>
+    <span class="phonetic">/rɪˈpiːt/</span>
+    <span class="def">v. 重复</span>
+  </div>
+</div>
+
+<h3>对比：一般现在时 vs 现在进行时</h3>
+<table class="comparison-table">
+  <tr><th></th><th>一般现在时</th><th>现在进行时</th></tr>
+  <tr><td><strong>用法</strong></td><td>习惯、常态、客观事实</td><td>正在发生的事</td></tr>
+  <tr><td><em>频率副词：always, usually, sometimes, never</em></td><td><em>时间标志：now, at the moment, still, Listen!</em></td></tr>
+</table>
+
+<h3>从课文中对比</h3>
+<div class="ks-box">
+<p><strong>一般现在时（习惯）:</strong></p>
+<ul>
+  <li><em>I <u>never get up</u> early on Sundays.</em> （每个周日都如此 — 习惯）</li>
+  <li><em>I <u>sometimes stay</u> in bed until lunchtime.</em> （有时如此 — 习惯）</li>
+  <li><em><u>Do</u> you always <u>get up</u> so late?</em> （问一贯的习惯）</li>
+</ul>
+<p style="margin-top:0.8rem;"><strong>现在进行时（此刻正在做）:</strong></p>
+<ul>
+  <li><em>It <u>is raining</u> again.</em> （说话时正在下雨）</li>
+  <li><em>I'm <u>coming</u> to see you.</em> （即将发生的行动）</li>
+  <li><em>I <u>am still having</u> breakfast.</em> （此时此刻正在吃）</li>
+  <li><em>What <u>are</u> you <u>doing</u>?</em> （问此刻在做什么）</li>
+</ul>
+</div>
+
+<h3>本课最精彩的部分</h3>
+<p>课文的"笑点"在于：作者说 "I'm still having breakfast"（我正在吃早饭），而 Aunt Lucy 惊呼 "It's one o'clock! Do you always get up so late?"（都下午一点了！你总是起这么晚吗？）</p>
+<ul>
+  <li><strong>一般现在时</strong> <em>Do you always get up so late?</em> — 问的是一个<strong>习惯</strong>（你这个人是不是一直都这样？）</li>
+  <li><strong>现在进行时</strong> <em>I'm having breakfast.</em> — 说的是<strong>此刻</strong>的动作（我一点钟了还在吃早饭）</li>
+</ul>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：选择正确的时态</div>
+  <ol>
+    <li>She usually <u>_________</u> (get up / gets up / is getting up) at 7 o'clock.</li>
+    <li>Listen! Someone <u>_________</u> (knocks / is knocking) at the door.</li>
+    <li>I <u>_________</u> (never eat / am never eating) meat. I'm a vegetarian.</li>
+    <li>He <u>_________</u> (still sleeps / is still sleeping). Don't wake him up.</li>
+    <li>What <u>_________</u> you <u>_________</u> (do / are ... doing) right now?</li>
+    <li>The sun <u>_________</u> (rises / is rising) in the east.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. gets up（习惯）<br>
+    2. is knocking（正在发生，Listen! 是标志词）<br>
+    3. never eat（习惯，频率副词 never）<br>
+    4. is still sleeping（此刻仍在进行，still 是标志词）<br>
+    5. are ... doing（right now = 此刻）<br>
+    6. rises（客观真理，太阳东升）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：用动词的正确形式填空</div>
+  <p>用括号里动词的 <strong>一般现在时</strong> 或 <strong>现在进行时</strong> 填空：</p>
+  <ol>
+    <li>A: Where's John? B: He <u>_________</u> (have) a shower.</li>
+    <li>A: What <u>_________</u> you <u>_________</u> (do) in your free time? B: I <u>_________</u> (read) books.</li>
+    <li>She <u>_________</u> (work) in a hospital. She's a nurse.</li>
+    <li>Be quiet! I <u>_________</u> (try) to concentrate.</li>
+    <li>We <u>_________</u> (go) to the beach every summer.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. is having（此刻正在洗澡）<br>
+    2. do ... do / read（空闲时间做的事 = 习惯）<br>
+    3. works（职业 = 常态）<br>
+    4. am trying（正在尝试集中注意力）<br>
+    5. go（every summer = 每年的习惯）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：翻译句子（英译中）</div>
+  <ol>
+    <li>I never get up early at weekends.</li>
+    <li>What are you doing at the moment?</li>
+    <li>She sometimes stays in bed until 10 o'clock.</li>
+    <li>Listen! The telephone is ringing.</li>
+    <li>'Dear me!' she said. 'Do you always eat so fast?'</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. 我周末从不早起。<br>
+    2. 你现在在做什么？<br>
+    3. 她有时在床上躺到十点钟。<br>
+    4. 听！电话铃在响。<br>
+    5. "天哪！"她说。"你总是吃得这么快吗？"
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. <em>on Sundays</em> vs <em>last Sunday</em></h3>
+<ul>
+  <li><strong>on Sundays</strong> = 每个周日（泛指）→ 用一般现在时</li>
+  <li><strong>last Sunday</strong> = 上周日（特指）→ 用一般过去时</li>
+</ul>
+<p>课文对比：<em>I <u>never get up</u> early <strong>on Sundays</strong>.</em> vs <em><strong>Last Sunday</strong> I <u>got up</u> very late.</em></p>
+
+<h3>2. <em>until</em>（直到…为止）</h3>
+<ul>
+  <li><em>I stayed in bed <u>until</u> lunchtime.</em> （我一直躺在床上，直到午饭时间）</li>
+  <li><em>Wait here <u>until</u> I come back.</em> （在这儿等到我回来）</li>
+</ul>
+
+<h3>3. <em>What a day!</em>（感叹句）</h3>
+<p>结构：<strong>What + (a/an) + 名词 + 主语 + 动词!</strong></p>
+<ul>
+  <li><em>What a beautiful day!</em></li>
+  <li><em>What a nice surprise!</em></li>
+  <li><em>What interesting books!</em>（可数复数不加 a/an）</li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">get up early / late</td><td class="zh">早起 / 晚起</td></tr>
+  <tr><td class="en">stay in bed</td><td class="zh">躺在床上</td></tr>
+  <tr><td class="en">look out of the window</td><td class="zh">往窗外看</td></tr>
+  <tr><td class="en">just then</td><td class="zh">正在那时</td></tr>
+  <tr><td class="en">by train</td><td class="zh">乘火车</td></tr>
+  <tr><td class="en">come to see sb</td><td class="zh">来看某人</td></tr>
+  <tr><td class="en">Dear me!</td><td class="zh">天哪！</td></tr>
+  <tr><td class="en">What a day!</td><td class="zh">什么鬼天气！</td></tr>
+  <tr><td class="en">have breakfast / have lunch</td><td class="zh">吃早饭 / 吃午饭</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用英文回答以下问题（大声说出来！）</div>
+  <ol>
+    <li>Do you always get up early?</li>
+    <li>What are you doing right now?（除了回答这个问题之外 😄）</li>
+    <li>What do you usually do on Sundays?</li>
+    <li>What is the weather like outside at the moment?</li>
+  </ol>
+  <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">
+    💡 回答时要交替使用一般现在时（习惯）和现在进行时（此刻）。
+  </p>
+</div>
+
+<!-- ===== KEY TAKEAWAYS ===== -->
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：周日赖床被姑母"抓包"的幽默故事</li>
+  <li>✅ 现在进行时 <em>be + doing</em> → 此刻正在发生的动作</li>
+  <li>✅ 一般现在时 <em>do/does</em> → 习惯、常态、客观事实</li>
+  <li>✅ 关键词：<em>still, at the moment, now, Listen!</em> → 现在进行时</li>
+  <li>✅ 关键词：<em>always, usually, sometimes, never, every</em> → 一般现在时</li>
+  <li>✅ <em>What a ...!</em> 感叹句结构</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 学完了？继续下一课 Lesson 3: Please Send Me a Card（一般过去时）<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') {
+    box.style.display = 'none';
+  } else {
+    box.style.display = 'block';
+  }
+}
+</script>
+
+</body>
+</html>

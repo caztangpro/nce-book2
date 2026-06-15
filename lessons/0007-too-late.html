@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 7: Too Late · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin: 1.2rem 0 0.5rem; }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0; border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem; }
+  li { margin-bottom: 0.3rem; }
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 7 · Too Late</span>
+</div>
+
+<h1>Lesson 7: Too Late</h1>
+<p class="lesson-meta">
+  📖 关键句型：过去进行时 (Past Continuous) &nbsp;|&nbsp; 📝 第 7 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p><strong>Too late</strong></p>
+<p>The plane was late and detectives were waiting at the airport all morning. They were expecting a valuable parcel of diamonds from South Africa. A few hours earlier, someone had told the police that thieves would try to steal the diamonds. When the plane arrived, some of the detectives were waiting inside the main building while others were waiting on the airfield. Two men took the parcel off the plane and carried it into the Customs House. While two detectives were keeping guard at the door, two others opened the parcel. To their surprise, the precious parcel was full of stones and sand!</p>
+</div>
+<div class="zh">
+<p><strong>太迟了</strong></p>
+<p>飞机晚点了，侦探们在机场等了整整一上午。他们正期待从南非来的一个装着钻石的贵重包裹。几小时前，有人告诉警方说小偷会设法偷走这些钻石。当飞机到达时，一些侦探在主楼里等着，而另一些则停在停机坪上。两个人把包裹从飞机上拿下来，搬进了海关大楼。当两个侦探在门口警戒时，另外两个打开了包裹。令他们吃惊的是，那个珍贵的包裹里装满了石头和沙子！</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item"><span class="word">detective</span><span class="phonetic">/dɪˈtektɪv/</span><span class="def">n. 侦探</span></div>
+  <div class="vocab-item"><span class="word">airport</span><span class="phonetic">/ˈeəpɔːt/</span><span class="def">n. 机场</span></div>
+  <div class="vocab-item"><span class="word">expect</span><span class="phonetic">/ɪkˈspekt/</span><span class="def">v. 期待，等待</span></div>
+  <div class="vocab-item"><span class="word">valuable</span><span class="phonetic">/ˈvæljuəbəl/</span><span class="def">adj. 贵重的</span></div>
+  <div class="vocab-item"><span class="word">parcel</span><span class="phonetic">/ˈpɑːsəl/</span><span class="def">n. 包裹</span></div>
+  <div class="vocab-item"><span class="word">diamond</span><span class="phonetic">/ˈdaɪəmənd/</span><span class="def">n. 钻石</span></div>
+  <div class="vocab-item"><span class="word">steal</span><span class="phonetic">/stiːl/</span><span class="def">v. 偷 (stole, stolen)</span></div>
+  <div class="vocab-item"><span class="word">thief</span><span class="phonetic">/θiːf/</span><span class="def">n. 小偷 (pl. thieves)</span></div>
+  <div class="vocab-item"><span class="word">guard</span><span class="phonetic">/ɡɑːd/</span><span class="def">n. 警戒，守卫</span></div>
+  <div class="vocab-item"><span class="word">precious</span><span class="phonetic">/ˈpreʃəs/</span><span class="def">adj. 珍贵的</span></div>
+  <div class="vocab-item"><span class="word">stone</span><span class="phonetic">/stəʊn/</span><span class="def">n. 石头</span></div>
+  <div class="vocab-item"><span class="word">sand</span><span class="phonetic">/sænd/</span><span class="def">n. 沙子</span></div>
+</div>
+
+<!-- ===== KEY STRUCTURE ===== -->
+<h2>🔑 关键句型：过去进行时 (Past Continuous)</h2>
+
+<h3>结构</h3>
+<div class="ks-box">
+  <strong>主语 + was/were + 现在分词 (doing)</strong>
+  <p style="margin-top:0.5rem;">
+    ✅ <em>The detectives <u>were waiting</u> at the airport.</em><br>
+    ✅ <em>Two detectives <u>were keeping</u> guard at the door.</em><br>
+    ❌ <em>They <u>were not expecting</u> the parcel yet.</em><br>
+    ❓ <em><u>Were</u> they <u>expecting</u> a parcel?</em>
+  </p>
+</div>
+
+<h3>用法 1：过去某一时刻正在进行的动作</h3>
+<p>课文中的例子——侦探们在机场<strong>一直在等：</strong></p>
+<ul>
+  <li><em>detectives <u>were waiting</u> at the airport all morning.</em></li>
+  <li><em>They <u>were expecting</u> a valuable parcel.</em></li>
+  <li><em>some <u>were waiting</u> inside… while others <u>were waiting</u> on the airfield.</em></li>
+  <li><em>two detectives <u>were keeping</u> guard at the door.</em></li>
+</ul>
+
+<div class="tip">
+💡 <strong>中文对比：</strong><br>
+"侦探们等了" → 一般过去时（只说做了这件事）<br>
+"侦探们一直在等" → 过去进行时（强调在那个时间段内持续进行）
+</div>
+
+<h3>用法 2：过去进行时 + 一般过去时（打断）</h3>
+<p>一个<strong>长动作</strong>（进行时）被一个<strong>短动作</strong>（一般过去时）打断：</p>
+<ul>
+  <li><em><u>When</u> the plane <u>arrived</u>, detectives <u>were waiting</u>.</em><br>
+  → "飞机到达时（短动作），侦探们一直在等（长背景）"</li>
+</ul>
+
+<div class="ks-box">
+<p><strong>核心对比</strong></p>
+<table>
+  <tr><th>时态</th><th>用法</th><th>课文例子</th></tr>
+  <tr><td><strong>过去进行时</strong></td><td>背景动作（长）</td><td><em>detectives <u>were waiting</u></em></td></tr>
+  <tr><td><strong>一般过去时</strong></td><td>主要事件（短）</td><td><em>the plane <u>arrived</u></em></td></tr>
+  <tr><td><strong>一般过去时</strong></td><td>事件叙述</td><td><em>Two men <u>took</u> the parcel…</em></td></tr>
+  <tr><td><strong>过去完成时</strong></td><td>更早发生</td><td><em>someone <u>had told</u> the police</em></td></tr>
+</table>
+</div>
+
+<h3>while + 过去进行时</h3>
+<p><strong>while</strong> 常连接两个同时进行的过去动作：</p>
+<ul>
+  <li><em><u>While</u> two detectives <u>were keeping guard</u> at the door, two others <u>opened</u> the parcel.</em><br>
+  → "当两个人在门口警戒时（持续），另外两个打开了包裹（短暂事件）"</li>
+</ul>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：用过去进行时或一般过去时填空</div>
+  <ol>
+    <li>I _______________ (watch) TV when the phone _______________ (ring).</li>
+    <li>She _______________ (cook) dinner while her husband _______________ (read) the newspaper.</li>
+    <li>They _______________ (play) football at 3 o'clock yesterday afternoon.</li>
+    <li>When I _______________ (arrive), they _______________ (have) lunch.</li>
+    <li>He _______________ (walk) home when it _______________ (start) to rain.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. was watching … rang（看电视是背景，电话响是打断）<br>
+    2. was cooking … was reading（两个同时持续的动作）<br>
+    3. were playing（昨天下午3点那个时刻正在做的事）<br>
+    4. arrived … were having（到达时他们正在吃饭）<br>
+    5. was walking … started（走路时开始下雨）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：用 when 或 while 填空</div>
+  <ol>
+    <li>_______ I was walking home, I met an old friend.</li>
+    <li>She was reading a book _______ the doorbell rang.</li>
+    <li>_______ he was driving to work, he saw an accident.</li>
+    <li>They were playing cards _______ a lamp fell down.</li>
+    <li>_______ I opened the door, the cat ran out.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. While（走路是持续背景，遇到是打断）<br>
+    2. when（门铃响是突然打断）<br>
+    3. While（开车是持续背景）<br>
+    4. when（灯掉下来是突然事件）<br>
+    5. When（动作先后顺序，没有持续背景）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：中译英</div>
+  <ol>
+    <li>我正在吃早餐时，电话响了。</li>
+    <li>侦探们那天早上一直在机场等。</li>
+    <li>他正在看书，这时有人敲门。</li>
+    <li>令他们吃惊的是，盒子里装满了石头。</li>
+    <li>我在做饭的时候，我女儿在做作业。</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. I was having breakfast when the phone rang.<br>
+    2. The detectives were waiting at the airport that morning.<br>
+    3. He was reading a book when someone knocked at the door.<br>
+    4. To their surprise, the box was full of stones.<br>
+    5. While I was cooking, my daughter was doing her homework.
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. <em>when</em> vs <em>while</em></h3>
+<table>
+  <tr><th></th><th>when</th><th>while</th></tr>
+  <tr><td><strong>后跟的时态</strong></td><td>一般过去时 / 过去进行时</td><td>过去进行时 / 一般过去时（较少）</td></tr>
+  <tr><td><strong>强调</strong></td><td>时间点（突然发生）</td><td>时间段（持续中）</td></tr>
+  <tr><td><strong>例子</strong></td><td><em>I was reading <u>when</u> he arrived.</em></td><td><em>I was reading <u>while</u> he was cooking.</em></td></tr>
+</table>
+
+<h3>2. <em>to one's surprise</em> = 令某人吃惊的是</h3>
+<ul>
+  <li><strong>to one's + 情感名词</strong> 是一个常用结构：<br>
+  <em><u>To their surprise</u>, the parcel was full of stones.</em><br>
+  <em><u>To my disappointment</u>, she didn't come.</em><br>
+  <em><u>To his delight</u>, he passed the exam.</em></li>
+</ul>
+
+<h3>3. <em>take … off</em> = 从…取下 / 脱掉 / 起飞</h3>
+<ul>
+  <li><strong>take sth off</strong> = 从……取下<br><em>Two men <u>took</u> the parcel <u>off</u> the plane.</em></li>
+  <li><strong>take off</strong> = （飞机）起飞<br><em>The plane <u>took off</u> at 8 o'clock.</em></li>
+  <li><strong>take off</strong> = 脱掉（衣服）<br><em>He <u>took off</u> his coat.</em></li>
+</ul>
+
+<h3>4. <em>be full of</em> = 充满，装满了</h3>
+<ul>
+  <li><em>The parcel <u>was full of</u> stones and sand.</em></li>
+  <li>类似：<em>be filled with</em>（更正式）<br><em>The room <u>was filled with</u> people.</em></li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">wait at the airport</td><td class="zh">在机场等候</td></tr>
+  <tr><td class="en">all morning</td><td class="zh">整个上午</td></tr>
+  <tr><td class="en">expect a valuable parcel</td><td class="zh">期待一个贵重包裹</td></tr>
+  <tr><td class="en">a few hours earlier</td><td class="zh">几小时前</td></tr>
+  <tr><td class="en">try to steal</td><td class="zh">试图偷窃</td></tr>
+  <tr><td class="en">take sth off the plane</td><td class="zh">从飞机上取下某物</td></tr>
+  <tr><td class="en">carry into the Customs House</td><td class="zh">搬进海关大楼</td></tr>
+  <tr><td class="en">keep guard</td><td class="zh">警戒，守卫</td></tr>
+  <tr><td class="en">to one's surprise</td><td class="zh">令某人吃惊的是</td></tr>
+  <tr><td class="en">be full of</td><td class="zh">充满，装满了</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用英文回答（注意过去进行时！）</div>
+  <ol>
+    <li>What were you doing at 8 o'clock yesterday evening?</li>
+    <li>What were you doing when I asked this question? 😄</li>
+    <li>Were you watching TV when your phone last rang?</li>
+    <li>What was the weather doing when you woke up this morning?</li>
+  </ol>
+</div>
+
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：侦探等钻石包裹，结果里面全是石头和沙子的反转故事</li>
+  <li>✅ <strong>过去进行时</strong> was/were + doing → 过去某时正在进行的动作</li>
+  <li>✅ <strong>when + 一般过去时</strong> → 打断/突然事件</li>
+  <li>✅ <strong>while + 过去进行时</strong> → 两个同时进行的动作</li>
+  <li>✅ <strong>to one's surprise</strong> → 令某人吃惊的是</li>
+  <li>✅ <strong>take … off</strong> → 从…取下 / 起飞 / 脱掉</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 继续下一课 Lesson 8: The Best and the Worst（形容词比较级与最高级）<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>

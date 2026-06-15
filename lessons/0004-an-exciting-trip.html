@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4: An Exciting Trip · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    padding-left: 0.6rem; border-left: 4px solid var(--accent2);
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin-top: 1.2rem; margin-bottom: 0.5rem; }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0; border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise textarea {
+    width: 100%; min-height: 60px; padding: 0.6rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 0.95rem; font-family: inherit; resize: vertical;
+  }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem 0; }
+  li { margin-bottom: 0.3rem; }
+
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+  .warning {
+    background: #fdedec; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--red);
+    border-left: 4px solid var(--red);
+  }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 4 · An Exciting Trip</span>
+</div>
+
+<h1>Lesson 4: An Exciting Trip</h1>
+<p class="lesson-meta">
+  📖 关键句型：现在完成时 (Present Perfect) &nbsp;|&nbsp; 📝 第 4 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p><strong>An exciting trip</strong></p>
+<p>I have just received a letter from my brother, Tim. He is in Australia. He has been there for six months. Tim is an engineer. He is working for a big firm and he has already visited a great number of different places in Australia. He has just bought an Australian car and has gone to Alice Springs, a small town in the centre of Australia. He will soon visit Darwin. From there, he will fly to Perth. My brother has never been abroad before, so he is finding this trip very exciting.</p>
+</div>
+<div class="zh">
+<p><strong>一次激动人心的旅行</strong></p>
+<p>我刚收到弟弟蒂姆的一封信。他在澳大利亚。他在那儿已经待了六个月了。蒂姆是个工程师。他在一家大公司工作，而且已经去过澳大利亚的许多地方了。他刚买了一辆澳大利亚小汽车，去了澳大利亚中部的一个小镇——艾丽斯斯普林斯。他不久还将到达尔文去，从那里再飞往珀斯。我弟弟以前从未出过国，所以他觉得这次旅行非常激动人心。</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item"><span class="word">exciting</span><span class="phonetic">/ɪkˈsaɪtɪŋ/</span><span class="def">adj. 令人兴奋的</span></div>
+  <div class="vocab-item"><span class="word">receive</span><span class="phonetic">/rɪˈsiːv/</span><span class="def">v. 收到，接到</span></div>
+  <div class="vocab-item"><span class="word">firm</span><span class="phonetic">/fɜːm/</span><span class="def">n. 公司，商号</span></div>
+  <div class="vocab-item"><span class="word">different</span><span class="phonetic">/ˈdɪfərənt/</span><span class="def">adj. 不同的</span></div>
+  <div class="vocab-item"><span class="word">centre</span><span class="phonetic">/ˈsentə/</span><span class="def">n. 中心</span></div>
+  <div class="vocab-item"><span class="word">abroad</span><span class="phonetic">/əˈbrɔːd/</span><span class="def">adv. 在国外</span></div>
+</div>
+
+<!-- ===== KEY STRUCTURE ===== -->
+<h2>🔑 关键句型：现在完成时 (Present Perfect)</h2>
+
+<h3>结构公式</h3>
+<div class="ks-box">
+  <strong>主语 + have/has + 过去分词 (past participle)</strong>
+  <p style="margin-top:0.5rem;">
+    ✅ 肯定：<em>I <u>have received</u> a letter.</em><br>
+    ❌ 否定：<em>He <u>has not / hasn't visited</u> Darwin yet.</em><br>
+    ❓ 疑问：<em><u>Have</u> you <u>been</u> to Australia?</em>
+  </p>
+</div>
+
+<h3>课文中所有的现在完成时</h3>
+<table>
+  <tr><th>主语</th><th>have/has</th><th>过去分词</th><th>宾语/状语</th></tr>
+  <tr><td>I</td><td>have</td><td>received</td><td>a letter from my brother</td></tr>
+  <tr><td>He</td><td>has</td><td>been</td><td>there for six months</td></tr>
+  <tr><td>He</td><td>has</td><td>visited</td><td>a great number of places</td></tr>
+  <tr><td>He</td><td>has</td><td>bought</td><td>an Australian car</td></tr>
+  <tr><td>He</td><td>has</td><td>gone</td><td>to Alice Springs</td></tr>
+  <tr><td>My brother</td><td>has</td><td>been</td><td>abroad</td></tr>
+</table>
+
+<h3>本课核心：现在完成时的四个用法</h3>
+
+<table>
+  <tr><th>用法</th><th>含义</th><th>课文例子</th></tr>
+  <tr>
+    <td>1️⃣ <strong>已完成</strong></td>
+    <td>刚完成的动作（just）</td>
+    <td><em>I <u>have just received</u> a letter.</em></td>
+  </tr>
+  <tr>
+    <td>2️⃣ <strong>经历</strong></td>
+    <td>曾经/从未做过某事</td>
+    <td><em>He <u>has never been</u> abroad before.</em></td>
+  </tr>
+  <tr>
+    <td>3️⃣ <strong>已发生</strong></td>
+    <td>某事已经发生（already）</td>
+    <td><em>He <u>has already visited</u> many places.</em></td>
+  </tr>
+  <tr>
+    <td>4️⃣ <strong>持续状态</strong></td>
+    <td>从过去到现在（for/since）</td>
+    <td><em>He <u>has been</u> there <u>for six months</u>.</em></td>
+  </tr>
+</table>
+
+<h3>本课五大标志词</h3>
+<table>
+  <tr><th>标志词</th><th>含义</th><th>位置</th><th>例句</th></tr>
+  <tr><td><strong>just</strong></td><td>刚刚</td><td>have/has + <u>just</u> + 过去分词</td><td><em>I have <u>just</u> received...</em></td></tr>
+  <tr><td><strong>already</strong></td><td>已经</td><td>have/has + <u>already</u> + 过去分词</td><td><em>He has <u>already</u> visited...</em></td></tr>
+  <tr><td><strong>never</strong></td><td>从未</td><td>have/has + <u>never</u> + 过去分词</td><td><em>He has <u>never</u> been abroad...</em></td></tr>
+  <tr><td><strong>ever</strong></td><td>曾经</td><td>用于疑问句</td><td><em><u>Have</u> you <u>ever</u> been to Japan?</em></td></tr>
+  <tr><td><strong>yet</strong></td><td>还未</td><td>否定句/疑问句句尾</td><td><em>He hasn't visited Darwin <u>yet</u>.</em></td></tr>
+</table>
+
+<div class="tip">
+💡 <strong>提示：</strong>现在完成时强调的是"现在"的结果/状态，而不是"过去"的动作时间。所以不能说 <em>I have arrived yesterday.</em>（✘）→ 因为 yesterday 是具体过去时间。<br>
+✅ 正确：<em>I arrived yesterday.</em>（一般过去时）或 <em>I have just arrived.</em>（现在完成时）
+</div>
+
+<!-- ===== KEY DIFFERENCE ===== -->
+<h2>⚡ 重点对比：一般过去时 vs 现在完成时</h2>
+
+<table>
+  <tr><th></th><th>一般过去时</th><th>现在完成时</th></tr>
+  <tr><td><strong>关注点</strong></td><td>动作发生的<strong>时间</strong>（过去）</td><td>动作与<strong>现在</strong>的联系</td></tr>
+  <tr><td><strong>时间词</strong></td><td>yesterday, last week, 3 years ago</td><td>just, already, ever, never, yet, for, since</td></tr>
+  <tr><td><strong>问句</strong></td><td><em>When did you arrive?</em></td><td><em>Have you arrived yet?</em></td></tr>
+  <tr><td><strong>课文对比</strong></td><td><em>I <u>received</u> a letter.（刚刚收到这个动作）</em></td><td><em>I <u>have received</u> a letter.（强调现在已经收到）</em></td></tr>
+</table>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：用 have/has + 过去分词完成句子</div>
+  <ol>
+    <li>She _______________ (just / finish) her homework.</li>
+    <li>They _______________ (already / visit) the museum.</li>
+    <li>I _______________ (never / be) to Japan.</li>
+    <li>He _______________ (not / receive) my letter yet.</li>
+    <li>________ you _______________ (ever / eat) Italian food?</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. has just finished<br>
+    2. have already visited<br>
+    3. have never been<br>
+    4. has not received / hasn't received<br>
+    5. Have ... ever eaten
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：用动词的正确时态填空（一般过去时或现在完成时）</div>
+  <ol>
+    <li>I _______________ (see) that film last night.</li>
+    <li>She _______________ (never / see) that film.</li>
+    <li>He _______________ (buy) a new car yesterday.</li>
+    <li>They _______________ (already / buy) their tickets.</li>
+    <li>________ you _______________ (visit) the Great Wall when you were in China?</li>
+    <li>I _______________ (not / eat) anything since breakfast.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. saw（last night → 具体过去时间，用一般过去时）<br>
+    2. has never seen（经历，never → 现在完成时）<br>
+    3. bought（yesterday → 具体过去时间）<br>
+    4. have already bought（already → 现在完成时）<br>
+    5. Did ... visit（when you were in China → 已经结束的时段）<br>
+    6. have not eaten（since breakfast → 从早饭到现在）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：中译英</div>
+  <ol>
+    <li>我刚收到一封来自澳大利亚的信。</li>
+    <li>他去过很多不同的国家。</li>
+    <li>我以前从未出过国。</li>
+    <li>他已经买了去北京的票。</li>
+    <li>你吃过寿司（sushi）吗？</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. I have just received a letter from Australia.<br>
+    2. He has visited many different countries.<br>
+    3. I have never been abroad before.<br>
+    4. He has already bought a ticket to Beijing.<br>
+    5. Have you ever eaten sushi?
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. <em>has gone to</em> vs <em>has been to</em> vs <em>has been in</em></h3>
+<table>
+  <tr><th></th><th>含义</th><th>现在在哪？</th><th>例句</th></tr>
+  <tr><td><strong>has gone to</strong></td><td>去了（还没回来）</td><td>在那里 / 在路上</td><td><em>He <u>has gone to</u> Alice Springs.</em></td></tr>
+  <tr><td><strong>has been to</strong></td><td>去过（已经回来了）</td><td>回来了</td><td><em>I <u>have been to</u> Australia twice.</em></td></tr>
+  <tr><td><strong>has been in</strong></td><td>待在（持续状态）</td><td>还在那里</td><td><em>He <u>has been in</u> Australia for six months.</em></td></tr>
+</table>
+
+<div class="warning">
+⚠️ 特别注意：课文里既有 <em>has gone to Alice Springs</em>（去了还没回来），也有 <em>has been there for six months</em>（已经在那六个月了）。前者强调"去"的动作已完成，后者强调"待在那"的状态持续。
+</div>
+
+<h3>2. <em>a great number of</em> = 许多（+ 可数名词复数）</h3>
+<ul>
+  <li><strong>a great number of</strong> = a very large number of（许多）→ 正式</li>
+  <li><strong>a number of</strong> = several（几个）</li>
+  <li><strong>the number of</strong> = …的数量（谓语用单数）<br>
+  <em>The number of students <u>is</u> increasing.</em></li>
+</ul>
+
+<h3>3. <em>receive</em> vs <em>take</em></h3>
+<ul>
+  <li><strong>receive</strong> = 收到（被动接收）<br><em>I <u>received</u> a letter.</em></li>
+  <li><strong>take</strong> = 拿走（主动行为）<br><em>He <u>took</u> the book from the shelf.</em></li>
+</ul>
+
+<h3>4. <em>abroad</em>（副词，前面不加介词）</h3>
+<ul>
+  <li>✅ <em>go <u>abroad</u></em> / <em>live <u>abroad</u></em> / <em>be <u>abroad</u></em></li>
+  <li>❌ <em>go to <u>abroad</u></em>（abroad 是副词，不加 to）</li>
+  <li>❌ <em>go to <u>abroad</u> countries</em>（abroad 本身就是"国外"，不修饰名词）</li>
+  <li>✅ 要说 <em>go to <u>foreign</u> countries</em>（去外国）</li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">receive a letter from sb</td><td class="zh">收到某人的来信</td></tr>
+  <tr><td class="en">work for a big firm</td><td class="zh">在一家大公司工作</td></tr>
+  <tr><td class="en">a great number of</td><td class="zh">大量的（+可数名词）</td></tr>
+  <tr><td class="en">go abroad</td><td class="zh">出国</td></tr>
+  <tr><td class="en">fly to + 地点</td><td class="zh">飞往某地</td></tr>
+  <tr><td class="en">has gone to</td><td class="zh">去了（还没回）</td></tr>
+  <tr><td class="en">has been to</td><td class="zh">去过（已回）</td></tr>
+  <tr><td class="en">has been in</td><td class="zh">待在（持续状态）</td></tr>
+  <tr><td class="en">find sth + adj.</td><td class="zh">觉得某事…</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用英文完整回答以下问题（用现在完成时或一般过去时）</div>
+  <ol>
+    <li>Have you ever been abroad? Where have you been?</li>
+    <li>Have you ever received a postcard from a friend?</li>
+    <li>What have you just done? (e.g. I have just finished...)</li>
+    <li>How long have you studied English?</li>
+  </ol>
+  <p style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;">
+    💡 注意区分：<em>Have you ever been to...?</em>（经历） vs <em>When did you go there?</em>（过去具体时间）
+  </p>
+</div>
+
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：弟弟在澳大利亚的激动旅行</li>
+  <li>✅ 现在完成时：<strong>have/has + 过去分词</strong></li>
+  <li>✅ 四大用法：<strong>已完成 / 经历 / 已发生 / 持续</strong></li>
+  <li>✅ 五大标志词：<strong>just, already, never, ever, yet</strong></li>
+  <li>✅ <strong>has gone to</strong>（去了没回）vs <strong>has been to</strong>（去过已回）vs <strong>has been in</strong>（待在那里）</li>
+  <li>✅ <em>abroad</em> 是副词，前面不加 to</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 继续下一课 Lesson 5: No Wrong Numbers（一般过去时 vs 现在完成时对比）<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>

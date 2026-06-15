@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新概念英语第二册 · 在线学习</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --green: #27ae60; --orange: #e67e22;
+    --purple: #8e44ad;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.5rem; margin-bottom: 0.3rem;
+  }
+  .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 1rem; }
+  .progress { font-size: 0.9rem; color: var(--muted); margin-bottom: 2rem; }
+
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+
+  .lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.8rem; margin: 1rem 0;
+  }
+  .lesson-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    transition: box-shadow 0.2s, transform 0.15s;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+  }
+  .lesson-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  .lesson-card .num {
+    font-size: 0.75rem; font-weight: 700; color: var(--accent2);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .lesson-card .title {
+    font-size: 1rem; font-weight: 600; color: var(--accent);
+    margin: 0.2rem 0;
+  }
+  .lesson-card .grammar {
+    font-size: 0.85rem; color: var(--muted);
+  }
+
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.8rem; margin: 1rem 0;
+  }
+  .ref-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    text-decoration: none; color: inherit;
+    transition: box-shadow 0.2s;
+    border-left: 4px solid var(--green);
+  }
+  .ref-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .ref-card .title { font-weight: 600; color: var(--accent); }
+  .ref-card .desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+
+  .stats {
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+    margin: 1.5rem 0;
+  }
+  .stat-item { text-align: center; }
+  .stat-item .num { font-size: 1.8rem; font-weight: 700; color: var(--accent2); }
+  .stat-item .label { font-size: 0.85rem; color: var(--muted); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📘 新概念英语第二册</h1>
+<p class="subtitle"><em>Practice & Progress</em> · 跟着 AI 逐课学习</p>
+
+<div class="stats">
+  <div class="stat-item"><span class="num">7</span><div class="label">已完成课程</div></div>
+  <div class="stat-item"><span class="num">3</span><div class="label">参考文档</div></div>
+  <div class="stat-item"><span class="num">96</span><div class="label">总课数</div></div>
+</div>
+
+<h2>📖 课程目录 · Lessons</h2>
+<div class="lesson-grid">
+
+  <a href="lessons/0001-welcome-and-lesson1.html" class="lesson-card">
+    <span class="num">Lesson 1</span>
+    <span class="title">A Private Conversation</span>
+    <span class="grammar">简单陈述句语序</span>
+  </a>
+
+  <a href="lessons/0002-breakfast-or-lunch.html" class="lesson-card">
+    <span class="num">Lesson 2</span>
+    <span class="title">Breakfast or Lunch?</span>
+    <span class="grammar">现在进行时 vs 一般现在时</span>
+  </a>
+
+  <a href="lessons/0003-please-send-me-a-card.html" class="lesson-card">
+    <span class="num">Lesson 3</span>
+    <span class="title">Please Send Me a Card</span>
+    <span class="grammar">一般过去时 · 不规则动词</span>
+  </a>
+
+  <a href="lessons/0004-an-exciting-trip.html" class="lesson-card">
+    <span class="num">Lesson 4</span>
+    <span class="title">An Exciting Trip</span>
+    <span class="grammar">现在完成时</span>
+  </a>
+
+  <a href="lessons/0005-no-wrong-numbers.html" class="lesson-card">
+    <span class="num">Lesson 5</span>
+    <span class="title">No Wrong Numbers</span>
+    <span class="grammar">一般过去时 vs 现在完成时</span>
+  </a>
+
+  <a href="lessons/0006-percy-buttons.html" class="lesson-card">
+    <span class="num">Lesson 6</span>
+    <span class="title">Percy Buttons</span>
+    <span class="grammar">冠词 a/an/the</span>
+  </a>
+
+  <a href="lessons/0007-too-late.html" class="lesson-card">
+    <span class="num">Lesson 7</span>
+    <span class="title">Too Late</span>
+    <span class="grammar">过去进行时</span>
+  </a>
+
+</div>
+
+<h2>📚 参考文档 · Reference</h2>
+<div class="ref-grid">
+
+  <a href="reference/nce2-overview.html" class="ref-card">
+    <span class="title">📐 全书总览</span>
+    <span class="desc">NCE2 结构、单元划分、同心圆教学法</span>
+  </a>
+
+  <a href="reference/quantifiers-few-little-bit.html" class="ref-card">
+    <span class="title">🔢 数量限定词</span>
+    <span class="desc">a few / a little / a bit / a few of</span>
+  </a>
+
+  <a href="reference/since-vs-until.html" class="ref-card">
+    <span class="title">⏱ since vs until</span>
+    <span class="desc">时间介词起点 vs 终点辨析</span>
+  </a>
+
+  <a href="reference/english-measure-words.html" class="ref-card">
+    <span class="title">📦 英语量词速查</span>
+    <span class="desc">a piece of / a glass of / a pair of …</span>
+  </a>
+
+</div>
+
+<hr>
+<footer>
+  新概念英语第二册 · Practice & Progress · L.G. Alexander & 何其莘<br>
+  基于 AI 教学 · 逐课更新中
+</footer>
+
+</div>
+</body>
+</html>
