@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>虚拟语气完整指南 · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+    --purple: #8e44ad;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin: 1.2rem 0 0.5rem; }
+
+  .concept-box {
+    background: linear-gradient(135deg, #eaf2f8, #f0f4f8);
+    border: 1px solid #bcd4e6; border-radius: 12px;
+    padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+
+  .grammar-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.2rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .grammar-card .card-title {
+    font-size: 1.1rem; font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  .grammar-card .card-title.type0 { color: var(--muted); }
+  .grammar-card .card-title.type1 { color: var(--green); }
+  .grammar-card .card-title.type2 { color: var(--orange); }
+  .grammar-card .card-title.type3 { color: var(--red); }
+  .grammar-card .card-title.type-mix { color: var(--purple); }
+
+  .formula {
+    background: #f8f7f5; border-radius: 6px;
+    padding: 0.4rem 0.8rem; margin: 0.4rem 0;
+    font-family: "Courier New", monospace; font-size: 0.95rem;
+  }
+  .example {
+    border-left: 3px solid var(--accent2);
+    padding: 0.4rem 1rem; margin: 0.4rem 0;
+  }
+  .example .trans { color: var(--muted); font-size: 0.9rem; }
+  .example.highlight { background: #fef9e7; border-color: var(--orange); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem; }
+  li { margin-bottom: 0.3rem; }
+
+  .tip-box {
+    background: var(--highlight); border: 1px solid #f0e6c0;
+    border-radius: 8px; padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+  .tip-box.danger { background: #fdedec; border-color: #f5b7b1; }
+  .tip-box.success { background: #eafaf1; border-color: #a9dfbf; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .no-print { display: none; } }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>参考文档 · 虚拟语气完整指南</span>
+</div>
+
+<h1>🎭 虚拟语气 (Subjunctive Mood) 完整指南</h1>
+<p class="subtitle">从零开始，一张表看懂英语中"不真实"的假设和愿望</p>
+
+<!-- ===== CONCEPT ===== -->
+<div class="concept-box">
+  <h3 style="margin-top:0;">什么是虚拟语气？</h3>
+  <p>英语有三种<strong>语气 (Mood)</strong>：</p>
+  <table>
+    <tr><th>语气</th><th>用途</th><th>例子</th></tr>
+    <tr><td><strong>陈述语气</strong> (Indicative)</td><td>陈述事实</td><td><em>It <u>is</u> raining.</em>（正在下雨）</td></tr>
+    <tr><td><strong>祈使语气</strong> (Imperative)</td><td>下命令/请求</td><td><em><u>Open</u> the door.</em>（开门）</td></tr>
+    <tr><td style="background:#fef9e7;"><strong>虚拟语气</strong> (Subjunctive)</td><td>假设、愿望、与事实相反</td><td><em>If I <u>were</u> you…</em>（如果我是你…）</td></tr>
+  </table>
+  <p style="margin-top:0.5rem;"><strong>🎯 核心概念：</strong>虚拟语气表达的是<strong>"不是事实"</strong>或<strong>"与事实相反"</strong>的内容——包括假设、愿望、建议、怀疑等。</p>
+</div>
+
+<!-- ===== IF CONDITIONALS ===== -->
+<h2>一、条件句 (Conditional Sentences) 四大类</h2>
+
+<p>条件句是虚拟语气最主要的应用场景。按"可能性"从高到低排列：</p>
+
+<div class="grammar-card">
+  <div class="card-title type0">🟢 零类条件句 — 客观真理 / 总是成立</div>
+  <div class="formula">If + 一般现在时 , 一般现在时</div>
+  <div class="example">
+    <em>If you <u>heat</u> ice, it <u>melts</u>.</em><br>
+    <span class="trans">→ 如果你加热冰，它会融化。（科学事实，100% 成立）</span>
+  </div>
+  <div class="example">
+    <em>If it <u>rains</u>, the ground <u>gets</u> wet.</em><br>
+    <span class="trans">→ 如果下雨，地面会湿。（总是如此）</span>
+  </div>
+  <p style="margin-top:0.3rem;">✅ <strong>注意：</strong>这不是虚拟语气！这是陈述事实。if 在这里 = "when"。</p>
+</div>
+
+<div class="grammar-card">
+  <div class="card-title type1">🔵 第一类条件句 — 将来很可能发生 (if + 一般现在时, will + 动词原形)</div>
+  <div class="formula">If + 一般现在时 , will + 动词原形</div>
+  <div class="example">
+    <em>If it <u>rains</u> tomorrow, I <u>will stay</u> at home.</em><br>
+    <span class="trans">→ 如果明天下雨，我就待在家。（很有可能发生）</span>
+  </div>
+  <div class="example">
+    <em>If you <u>study</u> hard, you <u>will pass</u> the exam.</em><br>
+    <span class="trans">→ 如果你努力学习，你会通过考试。（很可能发生）</span>
+  </div>
+  <p style="margin-top:0.3rem;">✅ 这也是<strong>真实条件句</strong>——条件有<strong>很大可能</strong>实现。</p>
+</div>
+
+<div class="grammar-card">
+  <div class="card-title type2">🟠 第二类条件句 — 与现在/将来事实相反 (⭐ 虚拟语气入门)</div>
+  <div class="formula">If + 一般过去时 , would + 动词原形</div>
+  <div class="example highlight">
+    <em>If I <u>were</u> you, I <u>would study</u> harder.</em><br>
+    <span class="trans">→ 如果我是你，我会更努力学习。（但我不是你——与现在事实相反！）</span>
+  </div>
+  <div class="example">
+    <em>If I <u>had</u> enough money, I <u>would buy</u> a car.</em><br>
+    <span class="trans">→ 如果我有足够的钱，我会买辆车。（但现在没那么多钱）</span>
+  </div>
+  <div class="example">
+    <em>If she <u>knew</u> the truth, she <u>would be</u> very angry.</em><br>
+    <span class="trans">→ 如果她知道真相，她会很生气。（但她现在不知道）</span>
+  </div>
+  <div class="tip-box">
+    <strong>⚠️ 关键注意：</strong>无论主语是谁，be 动词都用 <strong>were</strong> 而不是 was！<br>
+    ✅ <em>If I <strong>were</strong> you…</em>&nbsp;&nbsp; ✅ <em>If he <strong>were</strong> here…</em><br>
+    ❌ <s>If I was you…</s>（口语中有时会听到，但标准语法要求用 were）
+  </div>
+</div>
+
+<div class="grammar-card">
+  <div class="card-title type3">🔴 第三类条件句 — 与过去事实相反 (⭐ 最常用的虚拟语气)</div>
+  <div class="formula">If + 过去完成时 (had done) , would have + 过去分词</div>
+  <div class="example highlight">
+    <em>If I <u>had known</u> you were coming, I <u>would have prepared</u> dinner.</em><br>
+    <span class="trans">→ 如果我知道你要来，我就准备晚饭了。（但不知道，所以没准备）</span>
+  </div>
+  <div class="example">
+    <em>If you <u>had studied</u> harder, you <u>would have passed</u> the exam.</em><br>
+    <span class="trans">→ 如果你更努力学习，你就通过考试了。（但你没努力，所以没通过）</span>
+  </div>
+  <div class="example">
+    <em>If it <u>hadn't rained</u>, we <u>would have gone</u> to the beach.</em><br>
+    <span class="trans">→ 如果没下雨，我们就去海滩了。（但下雨了，所以没去）</span>
+  </div>
+  <p>💡 <strong>中文对应：</strong>第三类条件句通常翻译为"要是……就……了"——暗示结果并没有发生。</p>
+</div>
+
+<!-- ===== MIXED ===== -->
+<div class="grammar-card">
+  <div class="card-title type-mix">🟣 混合条件句 — if 从句是过去，主句是现在</div>
+  <div class="formula">If + 过去完成时 , would + 动词原形</div>
+  <div class="example">
+    <em>If I <u>had taken</u> that job, I <u>would be</u> rich now.</em><br>
+    <span class="trans">→ 如果我当初接受了那份工作，我现在就富有了。（从句说过去，主句说现在的结果）</span>
+  </div>
+  <div class="example">
+    <em>If she <u>had studied</u> medicine, she <u>would be</u> a doctor now.</em><br>
+    <span class="trans">→ 如果她当时学医，她现在就是医生了。</span>
+  </div>
+</div>
+
+<!-- ===== COMPARISON ===== -->
+<h2>📊 四类条件句对比总表</h2>
+<table>
+  <tr><th>类型</th><th>if 从句</th><th>主句</th><th>可能性</th><th>例子</th></tr>
+  <tr>
+    <td>🟢 零类</td><td>一般现在时</td><td>一般现在时</td><td>100%（真理）</td>
+    <td><em>If you heat ice, it melts.</em></td>
+  </tr>
+  <tr>
+    <td>🔵 第一类</td><td>一般现在时</td><td>will + 原形</td><td>很可能</td>
+    <td><em>If it rains, I will stay.</em></td>
+  </tr>
+  <tr style="background:#fef9e7;">
+    <td>🟠 <strong>第二类</strong></td>
+    <td>一般过去时 (were)</td>
+    <td>would + 原形</td>
+    <td>几乎不可能 / 与现在相反</td>
+    <td><em>If I were you, I would go.</em></td>
+  </tr>
+  <tr style="background:#fdedec;">
+    <td>🔴 <strong>第三类</strong></td>
+    <td>had + 过去分词</td>
+    <td>would have + 过去分词</td>
+    <td>与过去相反（已无法改变）</td>
+    <td><em>If I had known, I would have come.</em></td>
+  </tr>
+  <tr>
+    <td>🟣 混合</td><td>had + 过去分词</td><td>would + 原形</td><td>从句过去，主句现在</td>
+    <td><em>If I had studied, I would be a doctor.</em></td>
+  </tr>
+</table>
+
+<div class="tip-box">
+<p><strong>🎯 快速选择技巧：</strong></p>
+<p>问自己——这个 if 条件：</p>
+<ul>
+  <li>是客观真理吗？ → <strong>零类</strong>（一般现在时）</li>
+  <li>将来很可能发生吗？ → <strong>第一类</strong>（will）</li>
+  <li>与<strong>现在</strong>事实相反吗？ → <strong>第二类</strong>（过去时 → would）</li>
+  <li>与<strong>过去</strong>事实相反吗？ → <strong>第三类</strong>（had done → would have done）</li>
+</ul>
+</div>
+
+<!-- ===== OTHER USES ===== -->
+<h2>二、虚拟语气的其他常见用法</h2>
+
+<h3>1. wish — 愿望（与事实相反）</h3>
+<table>
+  <tr><th>时间</th><th>结构</th><th>例子</th></tr>
+  <tr>
+    <td>对现在</td><td>wish + 一般过去时</td>
+    <td><em>I <u>wish</u> I <u>were</u> taller.</em>（可惜我不高）</td>
+  </tr>
+  <tr>
+    <td>对过去</td><td>wish + 过去完成时</td>
+    <td><em>I <u>wish</u> I <u>had studied</u> harder.</em>（后悔当初没努力）</td>
+  </tr>
+  <tr>
+    <td>对将来</td><td>wish + would + 原形</td>
+    <td><em>I <u>wish</u> it <u>would stop</u> raining.</em>（希望雨停，但不太可能）</td>
+  </tr>
+</table>
+
+<div class="example">
+  <em>I wish I <u>were</u> rich.</em><br>
+  <span class="trans">→ 我希望我很有钱。（但我并不富有）</span>
+</div>
+<div class="example">
+  <em>She wishes she <u>hadn't said</u> that.</em><br>
+  <span class="trans">→ 她希望自己没说过那句话。（但已经说了，很后悔）</span>
+</div>
+<div class="example">
+  <em>I wish you <u>would stop</u> smoking.</em><br>
+  <span class="trans">→ 我希望你能戒烟。（但你不太可能戒）</span>
+</div>
+
+<h3>2. as if / as though — 仿佛</h3>
+<div class="example">
+  <em>He talks <u>as if</u> he <u>knew</u> everything.</em><br>
+  <span class="trans">→ 他说得好像什么都知道似的。（但其实并不知道）</span>
+</div>
+<div class="example">
+  <em>She looks <u>as if</u> she <u>had seen</u> a ghost.</em><br>
+  <span class="trans">→ 她看起来像见了鬼一样。（但实际上并不是）</span>
+</div>
+
+<h3>3. suggest / insist / recommend / order 等动词后的 that 从句</h3>
+<p>这些表示"建议、要求、命令"的动词后，that 从句用 <strong>should + 动词原形</strong>（或直接省略 should 用动词原形）：</p>
+<div class="example">
+  <em>I suggest that he <u>(should) see</u> a doctor.</em><br>
+  <span class="trans">→ 我建议他去看医生。</span>
+</div>
+<div class="example">
+  <em>The teacher insisted that we <u>(should) finish</u> the homework.</em><br>
+  <span class="trans">→ 老师坚持要求我们完成作业。</span>
+</div>
+<div class="tip-box success">
+  <strong>🧠 注意：</strong>这里不管主语是谁，动词都用原形（没有第三人称单数的 s）！<br>
+  ✅ <em>I suggest that he <strong>go</strong>.</em>&nbsp;&nbsp; ❌ <s>I suggest that he <strong>goes</strong>.</s>
+</div>
+
+<h3>4. It's time… / would rather — 该做某事了 / 宁愿</h3>
+<div class="example">
+  <em>It's time you <u>went</u> to bed.</em><br>
+  <span class="trans">→ 你该去睡觉了。（早就该睡了，但还没去）</span>
+</div>
+<div class="example">
+  <em>I'd rather you <u>didn't</u> smoke here.</em><br>
+  <span class="trans">→ 我宁愿你不在这种吸烟。</span>
+</div>
+
+<!-- ===== COMMON MISTAKES ===== -->
+<h2>⚠️ 常见错误</h2>
+
+<div class="tip-box danger">
+  <p><strong>❌ 错误 1：将来虚拟条件句用 will</strong></p>
+  <p><s>If I will have time, I would come.</s><br>
+  ✅ <em>If I <strong>had</strong> time, I <strong>would</strong> come.</em></p>
+  <p>在第二类/第三类虚拟条件句中，if 从句里 <strong>永远不能出现</strong> will/would。</p>
+</div>
+
+<div class="tip-box danger">
+  <p><strong>❌ 错误 2：第三类条件句用错结构</strong></p>
+  <p><s>If I would have known, I would have come.</s><br>
+  ✅ <em>If I <strong>had known</strong>, I would have come.</em></p>
+  <p>if 从句里用 <strong>had + 过去分词</strong>，不是 would have。</p>
+</div>
+
+<div class="tip-box danger">
+  <p><strong>❌ 错误 3：第二类条件句中 was 代替 were</strong></p>
+  <p><s>If I was you, I would study harder.</s>（口语中不免，但语法不标准）<br>
+  ✅ <em>If I <strong>were</strong> you, I would study harder.</em>（标准语法）</p>
+</div>
+
+<div class="tip-box danger">
+  <p><strong>❌ 错误 4：suggest 从句中依然用第三人称单数</strong></p>
+  <p><s>I suggest that he goes to the doctor.</s><br>
+  ✅ <em>I suggest that he <strong>go</strong> to the doctor.</em></p>
+  <p>suggest/insist/recommend 后的 that 从句中，动词用原形（不加 s）。</p>
+</div>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：判断是第几类条件句</div>
+  <ol>
+    <li>If I were rich, I would travel around the world.</li>
+    <li>If you heat water to 100°C, it boils.</li>
+    <li>If I had known her number, I would have called her.</li>
+    <li>If it rains tomorrow, I will take an umbrella.</li>
+    <li>If she had left earlier, she would be here now.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. 🟠 第二类（与现在事实相反——我并不富有）<br>
+    2. 🟢 零类（客观真理）<br>
+    3. 🔴 第三类（与过去相反——我不知道她的号码，所以没打电话）<br>
+    4. 🔵 第一类（将来很可能发生）<br>
+    5. 🟣 混合类（从句过去 → 主句现在）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：用正确的动词形式填空</div>
+  <ol>
+    <li>If I _______________ (be) you, I would accept the offer.</li>
+    <li>If she had studied harder, she _______________ (pass) the exam.</li>
+    <li>I wish I _______________ (have) more time to learn English.</li>
+    <li>If it _______________ (rain) tomorrow, we will cancel the picnic.</li>
+    <li>If he had taken the medicine, he _______________ (feel) better now.</li>
+    <li>I suggest that he _______________ (see) a doctor immediately.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. were（第二类条件句，固定用 were）<br>
+    2. would have passed（第三类，与过去相反）<br>
+    3. had（wish 对现在，用过去时）<br>
+    4. rains（第一类，一般现在时）<br>
+    5. would feel（混合条件句——if 从句过去，主句现在）<br>
+    6. (should) see（suggest 后用动词原形）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：中译英（用虚拟语气！）</div>
+  <ol>
+    <li>如果我是你，我就接受那份工作。</li>
+    <li>我当时要是带伞就好了。（wish）</li>
+    <li>如果你昨天来了，你就能见到她。</li>
+    <li>他说话的样子好像什么都知道。（as if）</li>
+    <li>要是当时认真学习，我现在就上大学了。</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. If I were you, I would accept that job.<br>
+    2. I wish I had brought an umbrella.<br>
+    3. If you had come yesterday, you would have seen her.<br>
+    4. He talks as if he knew everything.<br>
+    5. If I had studied hard, I would be in university now.
+  </div>
+</div>
+
+<!-- ===== SUMMARY ===== -->
+<h2>📌 速记口诀</h2>
+
+<div class="tip-box" style="font-size:1.05rem;">
+<p><strong>虚拟语气七字诀：</strong></p>
+<p style="margin:0.5rem 0;">
+🟢 真理 <strong>零类</strong>用现在 — If you heat, it melts<br>
+🔵 可能 <strong>第一</strong>用 will — If it rains, I will stay<br>
+🟠 <strong>第二</strong> were/would 反现在 — If I were, I would go<br>
+🔴 <strong>第三</strong> had/would have 悔过去 — If I had known, I would have come<br>
+🟣 <strong>混合</strong>从句过去主句现 — If I had studied, I would be…
+</p>
+</div>
+
+<h2>📎 关联文档</h2>
+<ul>
+  <li><a href="would-usage.html">🔍 would 的六大用法</a> — would 在虚拟语气中的核心角色</li>
+</ul>
+
+<hr>
+<p style="text-align:center;color:var(--muted);">
+  📘 新概念英语第二册 · 参考文档<br>
+  有任何疑问，问 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>

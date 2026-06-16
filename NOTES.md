@@ -32,6 +32,12 @@
 - now 完成时与一般过去时的时间词判断
 - 过去分词不规则变化（已经掌握良好）
 
+## 学生提问记录
+
+- Lesson 9 课后：would 的用法疑问 → 已做参考文档 would-usage.html
+- Lesson 9 课后：要求详细讲解虚拟语气 → 已做参考文档 subjunctive-mood.html
+- Lesson 10 课后：及物动词与不及物动词的区别 → 已记录 learning-records/0016
+
 ## 参考资料索引
 
 - NCE Book 2 课文文本

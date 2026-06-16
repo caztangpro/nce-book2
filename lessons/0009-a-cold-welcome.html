@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 9: A Cold Welcome · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin: 1.2rem 0 0.5rem; }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0; border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem; }
+  li { margin-bottom: 0.3rem; }
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+
+  .prep-chart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.6rem; margin: 1rem 0;
+  }
+  .prep-card {
+    border-radius: 8px; padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+  }
+  .prep-card.at { background: #fef9e7; border-color: #f0e6c0; }
+  .prep-card.on { background: #eaf2f8; border-color: #bcd4e6; }
+  .prep-card.in { background: #eafaf1; border-color: #b8e0c0; }
+  .prep-card .prep-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .prep-card .prep-example { font-size: 0.9rem; }
+  .prep-card .prep-example li { margin-bottom: 0.15rem; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 9 · A Cold Welcome</span>
+</div>
+
+<h1>Lesson 9: A Cold Welcome</h1>
+<p class="lesson-meta">
+  📖 关键句型：时间介词 (Prepositions of Time) &nbsp;|&nbsp; 📝 第 9 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p><strong>A cold welcome</strong></p>
+<p>On Wednesday evening, we went to the Town Hall. It was the last day of the year and a large crowd of people had gathered under the Town Hall clock. It would strike twelve in twenty minutes' time. Fifteen minutes passed and then, at five to twelve, the clock stopped. The big minute hand did not move. We waited and waited, but nothing happened. Suddenly someone shouted, 'It's two minutes past twelve! The clock has stopped!' I looked at my watch. It was true. The big clock refused to welcome the New Year. At that moment, everybody began to laugh and sing.</p>
+</div>
+<div class="zh">
+<p><strong>冷遇</strong></p>
+<p>星期三晚上，我们去了市政厅。那是一年的最后一天，一大群人聚集在市政厅的大钟下面。再过二十分钟，大钟就要敲响十二点了。十五分钟过去了，然后，在差五分十二点时，大钟停了。巨大的分针不动了。我们等啊等，但什么也没发生。突然有人喊道："已经十二点过两分了！大钟停了！"我看了看手表，是真的。那座大钟不肯迎接新年。就在那一刻，大家都开始笑起来、唱起来。</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item"><span class="word">welcome</span><span class="phonetic">/ˈwelkəm/</span><span class="def">n./v. 欢迎</span></div>
+  <div class="vocab-item"><span class="word">crowd</span><span class="phonetic">/kraʊd/</span><span class="def">n. 人群</span></div>
+  <div class="vocab-item"><span class="word">gather</span><span class="phonetic">/ˈɡæðə/</span><span class="def">v. 聚集</span></div>
+  <div class="vocab-item"><span class="word">strike</span><span class="phonetic">/straɪk/</span><span class="def">v. 敲，击 (struck, struck)</span></div>
+  <div class="vocab-item"><span class="word">refuse</span><span class="phonetic">/rɪˈfjuːz/</span><span class="def">v. 拒绝</span></div>
+  <div class="vocab-item"><span class="word">shout</span><span class="phonetic">/ʃaʊt/</span><span class="def">v. 喊叫</span></div>
+  <div class="vocab-item"><span class="word">minute hand</span><span class="phonetic">/ˈmɪnɪt hænd/</span><span class="def">n. 分针</span></div>
+  <div class="vocab-item"><span class="word">town hall</span><span class="phonetic">/taʊn hɔːl/</span><span class="def">n. 市政厅</span></div>
+</div>
+
+<!-- ===== KEY STRUCTURE ===== -->
+<h2>🔑 关键句型：时间介词 (Prepositions of Time)</h2>
+
+<p>时间介词用来表示动作发生的具体时间。本课出现的三个核心时间介词：<strong>at, on, in</strong>。</p>
+
+<div class="prep-chart">
+
+<div class="prep-card at">
+  <div class="prep-title">⏰ at</div>
+  <div class="prep-example">
+    <strong>具体时间点</strong><br>
+    ⚡ <em>at five to twelve</em><br>
+    ⚡ <em>at that moment</em><br>
+    ⚡ <em>at 8 o'clock</em><br>
+    ⚡ <em>at noon / midnight</em><br>
+    ⚡ <em>at night / at the weekend</em>
+  </div>
+</div>
+
+<div class="prep-card on">
+  <div class="prep-title">📅 on</div>
+  <div class="prep-example">
+    <strong>某一天/日期</strong><br>
+    ⚡ <em><u>on Wednesday evening</u></em><br>
+    ⚡ <em>on Monday</em><br>
+    ⚡ <em>on June 16th</em><br>
+    ⚡ <em>on Christmas Day</em><br>
+    ⚡ <em>on the morning of July 1st</em>
+  </div>
+</div>
+
+<div class="prep-card in">
+  <div class="prep-title">📆 in</div>
+  <div class="prep-example">
+    <strong>较长的时间段</strong><br>
+    ⚡ <em><u>in twenty minutes' time</u></em><br>
+    ⚡ <em>in the morning / afternoon</em><br>
+    ⚡ <em>in January / in 2025</em><br>
+    ⚡ <em>in winter / in the 21st century</em>
+  </div>
+</div>
+
+</div>
+
+<div class="ks-box">
+<p><strong>课文中出现的时间介词</strong></p>
+<ul>
+  <li><em><u>On</u> Wednesday evening</em> → 具体某一天的晚上 → <strong>on</strong></li>
+  <li><em>It was the last day <u>of</u> the year</em> → 所属关系</li>
+  <li><em><u>in</u> twenty minutes' time</em> → 在……时间之后（将来时中表示"再过……"）</li>
+  <li><em><u>at</u> five to twelve</em> → 具体时间点 → <strong>at</strong></li>
+  <li><em><u>At</u> that moment</em> → 具体那一刻 → <strong>at</strong></li>
+  <li><em>two minutes past twelve</em> → past 表示"过"（不是核心介词但常见）</li>
+</ul>
+</div>
+
+<h3>at / on / in 速查表</h3>
+<table>
+  <tr><th>介词</th><th>用法</th><th>例子</th></tr>
+  <tr><td><strong>at</strong></td><td>具体时间点（精确到小时/分钟）</td><td>at 5:30, at noon, at midnight, at that moment</td></tr>
+  <tr><td><strong>at</strong></td><td>固定短语</td><td>at night, at the weekend, at Christmas (vs on Christmas Day)</td></tr>
+  <tr><td><strong>on</strong></td><td>某一天/指定某天上午/下午等</td><td>on Monday, on June 16th, on Wednesday evening</td></tr>
+  <tr><td><strong>in</strong></td><td>较长的时间段（月/年/季节/世纪）</td><td>in January, in 2025, in winter, in the 21st century</td></tr>
+  <tr><td><strong>in</strong></td><td>时间段 + 's time（"再过……"）</td><td>in ten minutes' time, in two weeks' time</td></tr>
+  <tr><td><strong>—</strong></td><td>today, yesterday, tomorrow 🚫 不加介词</td><td>✗ in today / ✓ <em>I'll see you today.</em></td></tr>
+</table>
+
+<div class="tip">
+💡 <strong>记忆技巧</strong><br>
+<strong>at</strong> = ⚪ 一个点（时间点）<br>
+<strong>on</strong> = ▬ 一条线（某一天）<br>
+<strong>in</strong> = █ 一个面（时间段）<br><br>
+也可以从"精确度"来记：at 最精确 → on 次之 → in 最宽泛
+</div>
+
+<h3>in + 时间的两种含义</h3>
+<table>
+  <tr><th>结构</th><th>含义</th><th>例子</th></tr>
+  <tr><td><strong>in + 一段时间</strong>（过去/现在）</td><td>在……之内</td><td><em>I finished it <u>in two hours</u>.</em>（两小时内做完了）</td></tr>
+  <tr class="highlight-row"><td><strong>in + 一段时间 + 's time</strong>（将来）</td><td>再过……之后</td><td><em>It will strike twelve <u>in twenty minutes' time</u>.</em>（再过20分钟）</td></tr>
+  <tr><td><strong>in + 一段时间</strong>（将来）</td><td>……之后</td><td><em>She will arrive <u>in three days</u>.</em>（三天后到）</td></tr>
+</table>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：用 at / on / in 填空</div>
+  <ol>
+    <li>We went to the Town Hall _______ Wednesday evening.</li>
+    <li>The clock stopped _______ five to twelve.</li>
+    <li>It will strike twelve _______ twenty minutes' time.</li>
+    <li>I usually get up _______ 7 o'clock.</li>
+    <li>She was born _______ January 15th, 2000.</li>
+    <li>They often go swimming _______ summer.</li>
+    <li>See you _______ Monday morning!</li>
+    <li>He arrived _______ midnight.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. on（具体某天晚上）<br>
+    2. at（具体时间点）<br>
+    3. in（再过20分钟）<br>
+    4. at（具体钟点）<br>
+    5. on（具体日期）<br>
+    6. in（季节）<br>
+    7. on（某天早上）<br>
+    8. at（午夜，时间点）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：选择正确的介词</div>
+  <ol>
+    <li>What do you usually do ___ the weekend? (at / on / in)</li>
+    <li>The meeting starts ___ 9:30. (at / on / in)</li>
+    <li>I will finish this work ___ two days. (at / on / in)</li>
+    <li>They got married ___ June. (at / on / in)</li>
+    <li>We have a holiday ___ Christmas Day. (at / on / in)</li>
+    <li>He was born ___ the 20th century. (at / on / in)</li>
+    <li>She usually reads the newspaper ___ the morning. (at / on / in)</li>
+    <li>I'll call you ___ ten minutes. (at / on / in)</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. at/on（英式 at the weekend / 美式 on the weekend）<br>
+    2. at（具体时间点）<br>
+    3. in（"两天后"时常用 in）<br>
+    4. in（月份）<br>
+    5. on（具体某一天）<br>
+    6. in（世纪）<br>
+    7. in（泛指在早上；特定某天早上用 on）<br>
+    8. in（十分钟后）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：中译英（特别注意时间介词！）</div>
+  <ol>
+    <li>我们星期三晚上去了市政厅。</li>
+    <li>大钟在差五分十二点时停了。</li>
+    <li>再过二十分钟，火车就要开了。</li>
+    <li>他每天早晨六点起床。</li>
+    <li>她出生在1998年7月12日。</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. We went to the Town Hall on Wednesday evening.<br>
+    2. The clock stopped at five to twelve.<br>
+    3. The train will leave in twenty minutes.<br>
+    4. He gets up at six o'clock every morning.<br>
+    5. She was born on July 12th, 1998.
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 4：改错</div>
+  <ol>
+    <li>I will see you <u>in Monday</u>.</li>
+    <li>She goes to work <u>at the morning</u>.</li>
+    <li>We arrived <u>on midnight</u>.</li>
+    <li>He was born <u>in June 5th</u>.</li>
+    <li>The class starts <u>on 8:30</u>.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans4')">查看答案</button>
+  <div id="ans4" class="answer-box">
+    <strong>答案：</strong><br>
+    1. <s>in Monday</s> → <strong>on Monday</strong>（星期几用 on）<br>
+    2. <s>at the morning</s> → <strong>in the morning</strong>（泛指上午用 in）<br>
+    3. <s>on midnight</s> → <strong>at midnight</strong>（具体时间点用 at）<br>
+    4. <s>in June 5th</s> → <strong>on June 5th</strong>（具体日期用 on）<br>
+    5. <s>on 8:30</s> → <strong>at 8:30</strong>（具体钟点用 at）
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. <em>welcome</em> 的用法</h3>
+<div class="ks-box">
+<p>课文标题 "A Cold Welcome" 中的 welcome 是<strong>名词</strong>，意为"欢迎、接待"。</p>
+<ul>
+  <li><strong>名词：</strong><em>a warm welcome</em>（热情的欢迎），<em>a cold welcome</em>（冷遇）</li>
+  <li><strong>动词：</strong><em>Welcome to China!</em> / <em>The clock refused to welcome the New Year.</em></li>
+  <li><strong>形容词：</strong><em>You are welcome.</em>（不客气） / <em>You are welcome to join us.</em>（欢迎你加入）</li>
+</ul>
+</div>
+
+<h3>2. <em>in + 一段时间 + 's time</em> = 再过……</h3>
+<div class="ks-box">
+<p>这是一种固定表达，表示"从现在起再过多长时间"：</p>
+<table>
+  <tr><th>表达</th><th>含义</th></tr>
+  <tr><td>in ten <u>minutes'</u> time</td><td>再过十分钟</td></tr>
+  <tr><td>in two <u>hours'</u> time</td><td>再过两小时</td></tr>
+  <tr><td>in a <u>day's</u> time</td><td>再过一天</td></tr>
+  <tr><td>in three <u>weeks'</u> time</td><td>再过三周</td></tr>
+</table>
+<p><strong>注意单复数：</strong><br>
+单数 → <em>a day's time</em>（day's），复数 → <em>two days' time</em>（days'）</p>
+</div>
+
+<h3>3. <em>a large crowd of</em> = 一大群</h3>
+<ul>
+  <li><em>a large crowd of people</em>（一大群人）</li>
+  <li><em>a crowd of fans</em>（一群粉丝）</li>
+  <li>注意：crowd 本身是集合名词，<em>a crowd of + 复数名词</em> + 单数动词</li>
+</ul>
+
+<h3>4. 序数词 + of + 时间单位 = 某时间段的第几天/月/年</h3>
+<ul>
+  <li><em>the <u>last</u> day of the year</em>（一年的最后一天）</li>
+  <li><em>the <u>first</u> day of the month</em>（一个月的第一天）</li>
+  <li><em>the <u>third</u> week of the term</em>（学期的第三周）</li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">go to the Town Hall</td><td class="zh">去市政厅</td></tr>
+  <tr><td class="en">a large crowd of people</td><td class="zh">一大群人</td></tr>
+  <tr><td class="en">gather under the clock</td><td class="zh">聚集在大钟下</td></tr>
+  <tr><td class="en">strike twelve</td><td class="zh">敲响十二点</td></tr>
+  <tr><td class="en">in twenty minutes' time</td><td class="zh">再过二十分钟</td></tr>
+  <tr><td class="en">at five to twelve</td><td class="zh">在差五分十二点</td></tr>
+  <tr><td class="en">refuse to do sth</td><td class="zh">拒绝做某事</td></tr>
+  <tr><td class="en">at that moment</td><td class="zh">就在那一刻</td></tr>
+  <tr><td class="en">begin to laugh and sing</td><td class="zh">开始又笑又唱</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用英文回答（注意时间介词！）</div>
+  <ol>
+    <li>What do you usually do on Saturday evening?</li>
+    <li>What time do you get up in the morning?</li>
+    <li>When is your birthday? (Use "on"!)</li>
+    <li>What will you be doing in ten years' time?</li>
+    <li>What do you like to do at the weekend?</li>
+  </ol>
+</div>
+
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：跨年夜等待大钟敲响，结果钟停了的有趣故事</li>
+  <li>✅ <strong>at → 具体时间点</strong>：at five to twelve, at that moment, at 8 o'clock</li>
+  <li>✅ <strong>on → 某一天</strong>：on Wednesday evening, on Monday, on June 16th</li>
+  <li>✅ <strong>in → 时间段</strong>：in the morning, in January, in the 21st century</li>
+  <li>✅ <strong>in + 时间 + 's time</strong> = "再过……"：in twenty minutes' time</li>
+  <li>✅ welcome 的名词/动词/形容词三种词性</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 下一课：Lesson 10: Not for Jazz（被动语态入门）<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>

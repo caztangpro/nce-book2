@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 11: One Good Turn Deserves Another · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin: 1.2rem 0 0.5rem; }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0; border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+  .highlight-row td { background: #eaf2f8; font-weight: 600; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem; }
+  li { margin-bottom: 0.3rem; }
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+
+  .io-rule {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;
+  }
+  .io-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1rem 1.2rem;
+  }
+  .io-card .pattern { font-family: monospace; font-size: 1rem; font-weight: 700; color: var(--accent2); }
+  .io-card .ex { font-size: 0.9rem; margin-top: 0.3rem; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 11 · One Good Turn Deserves Another</span>
+</div>
+
+<h1>Lesson 11: One Good Turn Deserves Another</h1>
+<p class="lesson-meta">
+  📖 关键句型：间接宾语结构 (give me the money / give the money to me) &nbsp;|&nbsp; 📝 第 11 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p><strong>One good turn deserves another</strong></p>
+<p>I was having dinner at a restaurant when Tony Steele came in. Tony worked in a lawyer's office years ago, but he is now working at a bank. He gets a good salary, but he always borrows money from his friends and never pays it back. Tony saw me and came and sat at the same table. He has never borrowed money from me. While he was eating, I asked him to lend me twenty pounds. To my surprise, he gave me the money immediately. 'I have never borrowed any money from you,' Tony said, 'so now you can pay for my dinner!'</p>
+</div>
+<div class="zh">
+<p><strong>善有善报</strong></p>
+<p>我正在一家餐馆吃饭，这时托尼·斯蒂尔走了进来。托尼多年前在一家律师事务所工作，但现在他在一家银行上班。他薪水不错，但他总是向朋友借钱，而且从不归还。托尼看到了我，过来在同一张桌旁坐下。他从未向我借过钱。他正在吃饭时，我请他借给我二十英镑。令我吃惊的是，他立刻把钱给了我。"我从未向你借过钱，"托尼说，"所以现在你可以付我的晚餐钱！"</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item"><span class="word">turn</span><span class="phonetic">/tɜːn/</span><span class="def">n. 行为，举动</span></div>
+  <div class="vocab-item"><span class="word">deserve</span><span class="phonetic">/dɪˈzɜːv/</span><span class="def">v. 值得，应得</span></div>
+  <div class="vocab-item"><span class="word">salary</span><span class="phonetic">/ˈsæləri/</span><span class="def">n. 薪水</span></div>
+  <div class="vocab-item"><span class="word">borrow</span><span class="phonetic">/ˈbɒrəʊ/</span><span class="def">v. 借入</span></div>
+  <div class="vocab-item"><span class="word">lend</span><span class="phonetic">/lend/</span><span class="def">v. 借出 (lent, lent)</span></div>
+  <div class="vocab-item"><span class="word">pay</span><span class="phonetic">/peɪ/</span><span class="def">v. 支付 (paid, paid)</span></div>
+  <div class="vocab-item"><span class="word">restaurant</span><span class="phonetic">/ˈrestərɒnt/</span><span class="def">n. 餐馆</span></div>
+  <div class="vocab-item"><span class="word">immediately</span><span class="phonetic">/ɪˈmiːdiətli/</span><span class="def">adv. 立刻</span></div>
+</div>
+
+<!-- ===== KEY STRUCTURE ===== -->
+<h2>🔑 关键句型：间接宾语 (Indirect Object) 结构</h2>
+
+<h3>什么是双宾语结构？</h3>
+<p>有些动词（如 give, lend, pay, borrow, buy, tell）可以跟<strong>两个宾语</strong>：</p>
+<ul>
+  <li><strong>间接宾语 (IO)</strong> → 动作的接收者（通常是"人"）</li>
+  <li><strong>直接宾语 (DO)</strong> → 动作的直接承受者（通常是"物"）</li>
+</ul>
+
+<!-- Structure comparison -->
+<div class="io-rule">
+  <div class="io-card" style="background:#fef9e7;">
+    <div class="pattern">句型 A：动词 + IO + DO</div>
+    <div class="ex"><em>He gave <u>me</u> <u>the money</u>.</em><br>IO（人）在前，DO（物）在后</div>
+    <div class="ex" style="margin-top:0.3rem;">课文中：<br>
+      <em>He <u>gave me the money</u> immediately.</em><br>
+      <em>I asked him to <u>lend me twenty pounds</u>.</em></div>
+  </div>
+  <div class="io-card" style="background:#eaf2f8;">
+    <div class="pattern">句型 B：动词 + DO + to/for + IO</div>
+    <div class="ex"><em>He gave <u>the money</u> <u>to me</u>.</em><br>DO（物）在前，to/for + 人 在后</div>
+    <div class="ex" style="margin-top:0.3rem;">改写：<br>
+      <em>He gave the money <u>to me</u>.</em><br>
+      <em>Please lend twenty pounds <u>to me</u>.</em></div>
+  </div>
+</div>
+
+<h3>什么时候用 to？什么时候用 for？</h3>
+<table>
+  <tr><th>介词</th><th>含义</th><th>常见动词</th><th>例子</th></tr>
+  <tr class="highlight-row">
+    <td><strong>to</strong></td>
+    <td>"给" → 方向性</td>
+    <td>give, lend, pay, send, tell, show, offer</td>
+    <td><em>I gave the book <u>to</u> him.</em></td>
+  </tr>
+  <tr class="highlight-row">
+    <td><strong>for</strong></td>
+    <td>"为" → 目的性</td>
+    <td>buy, make, cook, get, find, choose</td>
+    <td><em>I bought a gift <u>for</u> you.</em></td>
+  </tr>
+</table>
+
+<div class="ks-box">
+<p><strong>课文中 to 的用法的实际例子：</strong></p>
+<ul>
+  <li><em>Tony worked <u>in</u> a lawyer's office.</em>（in 表地点）</li>
+  <li><em>He is now working <u>at</u> a bank.</em>（at 表具体机构）</li>
+  <li><em>He borrows money <u>from</u> his friends.</em>（from 表来源——借"入"）</li>
+  <li><em>pay <u>for</u> my dinner</em>（for 表"为……付钱"）</li>
+  <li><em>lend money <u>to</u> someone</em>（借"出"给人）</li>
+</ul>
+</div>
+
+<h3>borrow vs lend — 借入 vs 借出</h3>
+<table>
+  <tr><th></th><th>borrow（借入）</th><th>lend（借出）</th></tr>
+  <tr>
+    <td><strong>方向</strong></td>
+    <td>← 从别人那里借进来</td>
+    <td>→ 把自己的借给别人</td>
+  </tr>
+  <tr>
+    <td><strong>结构</strong></td>
+    <td>borrow + 物 + from + 人</td>
+    <td>lend + 人 + 物 / lend + 物 + to + 人</td>
+  </tr>
+  <tr>
+    <td><strong>例子</strong></td>
+    <td><em>I <u>borrowed</u> £20 <u>from</u> him.</em></td>
+    <td><em>He <u>lent</u> me £20.</em></td>
+  </tr>
+</table>
+
+<div class="tip">
+💡 <strong>记忆法：</strong><br>
+<strong>borrow</strong> = bring + → "带进来" → 借入<br>
+<strong>lend</strong> = leave + → "拿出去" → 借出<br>
+或者想中文：borrow = 借，lend = 贷
+</div>
+
+<h3>pay back vs pay for</h3>
+<table>
+  <tr><th>短语</th><th>含义</th><th>例子</th></tr>
+  <tr><td><strong>pay back</strong></td><td>还（钱）</td><td><em>He never <u>pays it back</u>.</em>（他从不还钱）</td></tr>
+  <tr><td><strong>pay for</strong></td><td>为……付账</td><td><em>You can <u>pay for</u> my dinner.</em>（你可以付我的晚餐）</td></tr>
+  <tr><td><strong>pay + 人 + 钱</strong></td><td>付给某人多少钱</td><td><em>I <u>paid him</u> £10.</em></td></tr>
+</table>
+
+<h3>ask sb to do sth</h3>
+<div class="ks-box">
+<p>课文中：<em>I <u>asked him to lend me</u> twenty pounds.</em></p>
+<p><strong>结构：ask + 人 + to + 动词原形</strong></p>
+<p>类似用法的动词：</p>
+<ul>
+  <li><em>tell sb <u>to do</u> sth</em> — 告诉某人做某事</li>
+  <li><em>want sb <u>to do</u> sth</em> — 想要某人做某事</li>
+  <li><em>invite sb <u>to do</u> sth</em> — 邀请某人做某事</li>
+  <li><em>teach sb <u>to do</u> sth</em> — 教某人做某事</li>
+</ul>
+</div>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：用 borrow 或 lend 填空</div>
+  <ol>
+    <li>Can I _______________ your pen, please?</li>
+    <li>He _______________ me his bike for the weekend.</li>
+    <li>She _______________ some money from her mother.</li>
+    <li>Could you _______________ me your umbrella? It's raining.</li>
+    <li>I don't like to _______________ money from friends.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. borrow（借用"进来"）<br>
+    2. lent（借出给他——过去时）<br>
+    3. borrowed（从妈妈那里借来）<br>
+    4. lend（借出给我）<br>
+    5. borrow（从朋友那里借入）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：用 to 或 for 填空</div>
+  <ol>
+    <li>He gave the money _______ me.</li>
+    <li>She bought a gift _______ her friend.</li>
+    <li>Please lend your dictionary _______ Tom.</li>
+    <li>I made a cup of tea _______ my mother.</li>
+    <li>Could you pay the bill _______ me?</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. to（give sth to sb）<br>
+    2. for（buy sth for sb）<br>
+    3. to（lend sth to sb）<br>
+    4. for（make sth for sb）<br>
+    5. for（pay for sb——为某人付账）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：改写句子（IO + DO ↔ DO + to/for + IO）</div>
+  <ol>
+    <li>He gave me the book. → He gave _______________</li>
+    <li>She lent him her car. → She lent _______________</li>
+    <li>I bought my mother a present. → I bought _______________</li>
+    <li>Please pass me the salt. → Please pass _______________</li>
+    <li>He told us a story. → He told _______________</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>答案：</strong><br>
+    1. the book to me.<br>
+    2. her car to him.<br>
+    3. a present for my mother.<br>
+    4. the salt to me.<br>
+    5. a story to us.
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 4：中译英</div>
+  <ol>
+    <li>他立刻把钱给了我。</li>
+    <li>你能借给我二十英镑吗？</li>
+    <li>他从不还钱。</li>
+    <li>我请他借给我一些钱。</li>
+    <li>你可以付我的晚餐钱。</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans4')">查看答案</button>
+  <div id="ans4" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. He gave me the money immediately.<br>
+    2. Can you lend me twenty pounds?<br>
+    3. He never pays it back.<br>
+    4. I asked him to lend me some money.<br>
+    5. You can pay for my dinner.
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. 标题谚语：One good turn deserves another</h3>
+<div class="ks-box">
+<p><strong>字面：</strong>一个好行为值得另一个好行为<br>
+<strong>含义：</strong>善有善报 / 以德报德</p>
+<p>类似的英语谚语：</p>
+<ul>
+  <li><em>One hand washes the other.</em>（互相帮助）</li>
+  <li><em>What goes around comes around.</em>（善恶终有报）</li>
+  <li><em>You scratch my back, I'll scratch yours.</em>（你帮我我帮你）</li>
+</ul>
+</div>
+
+<h3>2. pay 的用法</h3>
+<table>
+  <tr><th>搭配</th><th>含义</th><th>例子</th></tr>
+  <tr><td>pay + 钱</td><td>付多少钱</td><td><em>I paid £20.</em></td></tr>
+  <tr><td>pay + 人</td><td>付钱给某人</td><td><em>I paid him.</em></td></tr>
+  <tr><td><strong>pay for</strong> + 物</td><td>为某物付钱</td><td><em>pay for the dinner</em></td></tr>
+  <tr><td><strong>pay back</strong></td><td>还钱</td><td><em>pay back the money</em></td></tr>
+</table>
+
+<h3>3. while 的用法复习</h3>
+<p>课文：<em><u>While</u> he was eating, I asked him to lend me twenty pounds.</em></p>
+<ul>
+  <li>while + 进行时 →"在……期间"</li>
+  <li>复习自 Lesson 7：while 表示"两个动作同时发生"</li>
+</ul>
+
+<h3>4. 现在完成时的复习</h3>
+<p>课文中出现了两次现在完成时：</p>
+<ul>
+  <li><em>He <u>has never borrowed</u> money from me.</em>（从未借过，从过去到现在）</li>
+  <li><em>I <u>have never borrowed</u> any money from you.</em>（同上）</li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">one good turn deserves another</td><td class="zh">善有善报</td></tr>
+  <tr><td class="en">work in / at a place</td><td class="zh">在某处工作</td></tr>
+  <tr><td class="en">get a good salary</td><td class="zh">薪水不错</td></tr>
+  <tr><td class="en">borrow money from sb</td><td class="zh">向某人借钱</td></tr>
+  <tr><td class="en">lend sb money</td><td class="zh">借给某人钱</td></tr>
+  <tr><td class="en">pay back</td><td class="zh">还钱</td></tr>
+  <tr><td class="en">pay for</td><td class="zh">为……付账</td></tr>
+  <tr><td class="en">ask sb to do sth</td><td class="zh">请某人做某事</td></tr>
+  <tr><td class="en">to one's surprise</td><td class="zh">令某人吃惊的是</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用英文回答</div>
+  <ol>
+    <li>Do you ever borrow money from friends? Why or why not?</li>
+    <li>If a friend asked to borrow money from you, would you lend it?</li>
+    <li>What should you say when someone asks to borrow money?</li>
+    <li>Have you ever lent something and never got it back?</li>
+  </ol>
+</div>
+
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：一个"从不跟我借钱"的朋友，我反向操作找他借，结果他让我买单😂</li>
+  <li>✅ <strong>双宾语结构</strong>：give/lend/pay + 人 + 物 → 或 + 物 + to/for + 人</li>
+  <li>✅ <strong>to vs for</strong>：to 表"给"，for 表"为"</li>
+  <li>✅ <strong>borrow vs lend</strong>：borrow 是借入（from），lend 是借出（to）</li>
+  <li>✅ <strong>pay back / pay for</strong>：还钱 vs 付账</li>
+  <li>✅ <strong>ask sb to do sth</strong>：请某人做某事</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 下一课：Lesson 12: Goodbye and Good Luck（一般将来时 revisit）<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>
