@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>易混短语辨析速查 · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 {
+    font-size: 1.1rem; color: var(--accent); margin: 1.5rem 0 0.5rem;
+    padding-bottom: 0.2rem; border-bottom: 1px solid var(--border);
+  }
+
+  .group-box {
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .group-header {
+    padding: 0.8rem 1.2rem;
+    font-weight: 700; font-size: 1rem;
+    background: #eaf2f8; color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .group-header .lesson-ref {
+    font-size: 0.8rem; font-weight: 400; color: var(--muted);
+  }
+  .group-body { padding: 1rem 1.2rem; background: var(--card); }
+
+  .entry {
+    margin-bottom: 0.8rem; padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .entry:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .entry .headword { font-weight: 700; color: var(--accent); }
+  .entry .meaning { color: var(--text); }
+  .entry .example { font-size: 0.9rem; color: var(--text); margin: 0.2rem 0; }
+  .entry .example i { color: var(--accent2); }
+  .entry .note {
+    font-size: 0.85rem; color: var(--muted);
+    background: #f8f7f5; border-radius: 4px;
+    padding: 0.3rem 0.6rem; margin-top: 0.2rem;
+  }
+
+  .mnemonic {
+    background: var(--highlight); border-radius: 8px;
+    padding: 0.6rem 1rem; margin: 0.8rem 0 0 0;
+    font-size: 0.9rem; border: 1px solid #f0e6c0;
+  }
+  .mnemonic strong { color: var(--orange); }
+
+  table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+  th, td { padding: 0.5rem 0.7rem; text-align: left; border: 1px solid var(--border); font-size: 0.9rem; }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+  .highlight-row td { background: #eaf2f8; font-weight: 600; }
+
+  ul { padding-left: 1.5rem; margin: 0.5rem 0; }
+  li { margin-bottom: 0.2rem; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+  .tag {
+    display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.5rem;
+    border-radius: 10px; margin-left: 0.4rem;
+    background: #e8e6e1; color: var(--muted);
+  }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.5rem 0; }
+  .card-mini {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.6rem 0.8rem; background: var(--card);
+  }
+  .card-mini .phrase { font-weight: 700; color: var(--accent2); }
+  .card-mini .def { font-size: 0.85rem; }
+
+  @media (max-width: 600px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    .group-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>参考文档 · 易混短语辨析速查</span>
+</div>
+
+<h1>🔀 易混短语辨析速查</h1>
+<p class="subtitle">按主题归类，一眼分清相似短语的差异 · 随课程持续更新</p>
+
+<!-- ============================================ -->
+<!-- GROUP 1: WAY -->
+<h2>🛣️ 1. Way 家族 —— 四个 way 短语各不同</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>on the way / in the way / in a way / by the way</span>
+    <span class="lesson-ref">L14</span>
+  </div>
+  <div class="group-body">
+
+    <div class="grid-2">
+      <div class="card-mini">
+        <div class="phrase">🛣️ on the way</div>
+        <div class="def">途中，在路上</div>
+        <div class="example" style="font-size:0.85rem;margin-top:0.2rem;"><i>On the way</i>, a man waved to me.</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">🚧 in the way</div>
+        <div class="def">挡路，妨碍</div>
+        <div class="example" style="font-size:0.85rem;margin-top:0.2rem;">Don't stand <i>in the way</i>.</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">🤔 in a way</div>
+        <div class="def">从某种意义上说</div>
+        <div class="example" style="font-size:0.85rem;margin-top:0.2rem;"><i>In a way</i>, you're right.</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">💬 by the way</div>
+        <div class="def">顺便说一下</div>
+        <div class="example" style="font-size:0.85rem;margin-top:0.2rem;"><i>By the way</i>, I saw him yesterday.</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆钥匙：看介词本意</strong><br>
+      <strong>on</strong>（接触表面）= 在路上走 → <strong>on the way</strong><br>
+      <strong>in</strong>（在里面）= 堵在路里面 → <strong>in the way</strong>（挡路了）<br>
+      <strong>in a</strong>（在某范围内）= 在某种意义上 → <strong>in a way</strong><br>
+      <strong>by</strong>（顺便路过）= 顺便提及 → <strong>by the way</strong>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 2: ASK / REPLY -->
+<h2>❓ 2. "问与答"辨析</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>ask / ask for / reply / answer</span>
+    <span class="lesson-ref">L14</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>短语</th><th>用法</th><th>例子</th></tr>
+      <tr><td><strong>ask</strong> sb sth</td><td>问某人某事（及物）</td><td><i>I <u>asked</u> him his name.</i></td></tr>
+      <tr><td><strong>ask for</strong> sth</td><td>请求得到某物</td><td><i>He <u>asked for</u> a lift.</i></td></tr>
+      <tr><td><strong>ask for</strong> sb</td><td>找某人（询问）</td><td><i>Someone <u>asked for</u> you.</i></td></tr>
+      <tr><td><strong>reply</strong> (to sb)</td><td>回答（不及物，+to）</td><td><i>He <u>replied</u> in the same language.</i></td></tr>
+      <tr><td><strong>answer</strong> sb/sth</td><td>回答（及物，直接+宾语）</td><td><i>He <u>answered</u> my question.</i></td></tr>
+    </table>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆钥匙：</strong>ask + <strong>for</strong> = 想要得到（for = 为了）<br>
+      reply = 回答（较正式，不及物，不能说 reply me ❌）<br>
+      answer = 回答（直接接宾语，answer the question ✅）
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 3: APART FROM / EXCEPT / BESIDES -->
+<h2>➗ 3. "除了"三兄弟</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>apart from / except / besides</span>
+    <span class="lesson-ref">L14</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>短语</th><th>含义</th><th>包含/排除</th><th>例子</th></tr>
+      <tr>
+        <td><strong>apart from</strong></td>
+        <td>除了……（双重含义）</td>
+        <td style="color:var(--orange);">看语境，可包可排</td>
+        <td><i><u>Apart from</u> a few words, I don't know French.</i><br>（排除——除了几个词以外都不会）</td>
+      </tr>
+      <tr>
+        <td><strong>except</strong></td>
+        <td>除了……（排除在外）</td>
+        <td style="color:var(--red);">❌ 排除</td>
+        <td><i>Everyone <u>except</u> me knew French.</i><br>（我除外，别人都会）</td>
+      </tr>
+      <tr>
+        <td><strong>besides</strong></td>
+        <td>除了……（还有）</td>
+        <td style="color:var(--green);">✅ 包含</td>
+        <td><i><u>Besides</u> French, he speaks English.</i><br>（除了法语，还会英语）</td>
+      </tr>
+    </table>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆：</strong>except = 排除（ex- = 向外，把……排除出去）<br>
+      besides = 包含（side = 旁边，在……旁边还有）<br>
+      apart from = 中立派（两个意思都可能）
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 4: NEITHER / EITHER / NONE -->
+<h2>🎯 4. "两者/多者"否定与肯定</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>neither of / either of / none of / both of</span>
+    <span class="lesson-ref">L14</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>短语</th><th>范围</th><th>含义</th><th>例子</th></tr>
+      <tr><td><strong>neither of</strong></td><td>两者</td><td>（两者）都不</td><td><i><u>Neither of</u> us spoke.</i></td></tr>
+      <tr><td><strong>either of</strong></td><td>两者</td><td>（两者中）任一</td><td><i><u>Either of</u> us can help you.</i></td></tr>
+      <tr><td><strong>both of</strong></td><td>两者</td><td>（两者）都</td><td><i><u>Both of</u> them speak French.</i></td></tr>
+      <tr><td><strong>none of</strong></td><td>三者或以上</td><td>（所有）都不</td><td><i><u>None of</u> my friends live here.</i></td></tr>
+      <tr><td><strong>all of</strong></td><td>三者或以上</td><td>（所有）都</td><td><i><u>All of</u> them were late.</i></td></tr>
+    </table>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆：</strong><strong>n-</strong> 开头 = 否定（neither/none）<br>
+      <strong>e-</strong> 开头 = 二选一（either）<br>
+      <strong>b-</strong> 开头 = 两者都（both）<br>
+      <strong>既分数量又分肯定/否定</strong>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 5: SET -->
+<h2>⛵ 5. "出发"的各种说法</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>set out / set off / set sail</span>
+    <span class="lesson-ref">L12</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>短语</th><th>含义</th><th>用法</th><th>例子</th></tr>
+      <tr>
+        <td><strong>set out</strong></td>
+        <td>出发</td>
+        <td>最通用，不限交通方式</td>
+        <td><i>Captain Alison <u>set out</u> at eight o'clock.</i></td>
+      </tr>
+      <tr>
+        <td><strong>set off</strong></td>
+        <td>出发</td>
+        <td>与 set out 基本同义</td>
+        <td><i>We <u>set off</u> early in the morning.</i></td>
+      </tr>
+      <tr>
+        <td><strong>set sail</strong></td>
+        <td>起航</td>
+        <td>特指船只出发</td>
+        <td><i>They <u>set sail</u> for America.</i></td>
+      </tr>
+    </table>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆：</strong>sail = 航行 → 只用于船。out / off 通用。
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 6: JOIN / ATTEND / TAKE PART IN -->
+<h2>👥 6. "参加"的三种用法</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>take part in / join / attend</span>
+    <span class="lesson-ref">L12</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>短语</th><th>含义</th><th>搭配</th><th>例子</th></tr>
+      <tr>
+        <td><strong>take part in</strong></td>
+        <td>参加（活动）</td>
+        <td>赛事、竞赛、游戏</td>
+        <td><i>He will <u>take part in</u> an important race.</i></td>
+      </tr>
+      <tr>
+        <td><strong>join</strong></td>
+        <td>加入（组织/团体）</td>
+        <td>军队、俱乐部、公司</td>
+        <td><i>He <u>joined</u> the army.</i></td>
+      </tr>
+      <tr>
+        <td><strong>attend</strong></td>
+        <td>出席（场合）</td>
+        <td>会议、课程、仪式</td>
+        <td><i>I <u>attended</u> the meeting.</i></td>
+      </tr>
+    </table>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆层级：</strong>take part in = 参与活动 / join = 加入组织 / attend = 出席场合
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 7: AS USUAL / USUALLY -->
+<h2>⏰ 7. "通常"的不同表达</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>as usual / usually / at present</span>
+    <span class="lesson-ref">L13 · L14</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>表达</th><th>词性</th><th>含义</th><th>例子</th></tr>
+      <tr>
+        <td><strong>as usual</strong></td>
+        <td>副词短语</td>
+        <td>"像往常一样"（特定情况）</td>
+        <td><i><u>As usual</u>, the police had a difficult time.</i></td>
+      </tr>
+      <tr>
+        <td><strong>usually</strong></td>
+        <td>频率副词</td>
+        <td>"通常"（一般情况下，习惯）</td>
+        <td><i>I <u>usually</u> get up at 7.</i></td>
+      </tr>
+      <tr>
+        <td><strong>at present</strong></td>
+        <td>时间副词</td>
+        <td>"目前"（= now，稍正式）</td>
+        <td><i><u>At present</u>, they are visiting all parts.</i></td>
+      </tr>
+    </table>
+
+    <div class="mnemonic">
+      <strong>🗝 记忆：</strong>as usual = "像往常一样"（当天/当时的情况）<br>
+      usually = "通常"（长期的习惯）
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 8: KEEP + ... -->
+<h2>🔒 8. keep 的常见搭配</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>keep order / keep calm / keep quiet / keep doing</span>
+    <span class="lesson-ref">L13</span>
+  </div>
+  <div class="group-body">
+
+    <table>
+      <tr><th>搭配</th><th>含义</th><th>例子</th></tr>
+      <tr><td><strong>keep order</strong></td><td>维持秩序</td><td><i>The police will try to <u>keep order</u>.</i></td></tr>
+      <tr><td><strong>keep calm</strong></td><td>保持冷静</td><td><i><u>Keep calm</u> and carry on.</i></td></tr>
+      <tr><td><strong>keep quiet / silent</strong></td><td>保持安静/沉默</td><td><i>Please <u>keep quiet</u>.</i></td></tr>
+      <tr><td><strong>keep + doing</strong></td><td>持续做某事</td><td><i>He <u>kept talking</u> for an hour.</i></td></tr>
+      <tr><td><strong>keep + adj</strong></td><td>保持某种状态</td><td><i><u>Keep</u> safe / <u>Keep</u> warm.</i></td></tr>
+    </table>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GROUP 9: OTHER PHRASES -->
+<h2>🧩 9. 其他课内固定搭配</h2>
+<div class="group-box">
+  <div class="group-header">
+    <span>按主题 · 随课程积累</span>
+    <span class="lesson-ref">L4–L14</span>
+  </div>
+  <div class="group-body">
+
+    <div class="grid-2">
+      <div class="card-mini">
+        <div class="phrase">🌟 be proud of</div>
+        <div class="def">以……为自豪</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L12: We are proud of him.</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">🔢 plenty of</div>
+        <div class="def">大量，充足（+可数/不可数）</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L12: We'll have plenty of time.</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">👋 say goodbye to</div>
+        <div class="def">和……告别</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L12: say goodbye to him</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">✈️ set out for</div>
+        <div class="def">出发前往……</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L12: set out at eight</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">🚂 by + 交通工具</div>
+        <div class="def">by train / by bus / by plane</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L13: They will be coming by train.</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">📍 in the south of</div>
+        <div class="def">在……的南部</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L14: in the south of France</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">🖐️ wave to sb</div>
+        <div class="def">向某人招手</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L14: a young man waved to me</div>
+      </div>
+      <div class="card-mini">
+        <div class="phrase">🚗 give sb a lift</div>
+        <div class="def">让某人搭车</div>
+        <div class="note" style="font-size:0.8rem;margin-top:0.2rem;">L14: asked me for a lift</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<h2>📌 索引：各课易混短语出处</h2>
+
+<table>
+  <tr><th>课</th><th>短语</th><th>参见本页章节</th></tr>
+  <tr><td>L12</td><td>set out / set off / set sail</td><td>§5 出发的各种说法</td></tr>
+  <tr><td>L12</td><td>take part in / join / attend</td><td>§6 参加的三种用法</td></tr>
+  <tr><td>L12</td><td>plenty of / be proud of / say goodbye to</td><td>§9 其他搭配</td></tr>
+  <tr><td>L13</td><td>as usual / usually / at present</td><td>§7 通常的不同表达</td></tr>
+  <tr><td>L13</td><td>keep order / keep calm</td><td>§8 keep 搭配</td></tr>
+  <tr><td>L14</td><td>on the way / in the way / in a way / by the way</td><td>§1 Way 家族</td></tr>
+  <tr><td>L14</td><td>ask / ask for / reply / answer</td><td>§2 问与答辨析</td></tr>
+  <tr><td>L14</td><td>apart from / except / besides</td><td>§3 除了三兄弟</td></tr>
+  <tr><td>L14</td><td>neither of / either of / none of / both of</td><td>§4 两者/多者</td></tr>
+</table>
+
+<footer>
+  新概念英语第二册 · Practice & Progress · 易混短语辨析速查<br>
+  参考短语来源：Lessons 12–14 · 持续更新中
+</footer>
+
+</div>
+</body>
+</html>

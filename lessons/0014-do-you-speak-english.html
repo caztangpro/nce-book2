@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 14: Do You Speak English? · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7;
+    --green: #27ae60; --orange: #e67e22; --red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; color: var(--accent); margin: 1.2rem 0 0.5rem; }
+
+  .text-box {
+    background: var(--card);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .text-box .en { font-size: 1.05rem; margin-bottom: 1rem; }
+  .text-box .zh {
+    color: var(--muted); font-size: 0.95rem;
+    border-top: 1px dashed var(--border); padding-top: 1rem;
+  }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem; margin: 1rem 0;
+  }
+  .vocab-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+  }
+  .vocab-item .word { font-weight: 600; color: var(--accent); }
+  .vocab-item .phonetic { font-size: 0.85rem; color: var(--muted); }
+  .vocab-item .def { font-size: 0.9rem; }
+
+  .ks-box {
+    background: var(--highlight);
+    border: 1px solid #f0e6c0; border-radius: 8px;
+    padding: 1rem 1.5rem; margin: 1rem 0;
+  }
+
+  .exercise {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .exercise .q { font-weight: 600; margin-bottom: 0.5rem; }
+  .exercise .answer-box {
+    display: none; margin-top: 0.8rem; padding: 0.8rem 1rem;
+    background: #eafaf1; border: 1px solid var(--green);
+    border-radius: 8px; font-size: 0.9rem;
+  }
+
+  .btn {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.9rem; margin-top: 0.5rem;
+    background: var(--accent2); color: #fff; transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn.green { background: var(--green); }
+
+  .colloc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .colloc table { width: 100%; border-collapse: collapse; }
+  .colloc td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .colloc tr:last-child td { border-bottom: none; }
+  .colloc .en { font-weight: 600; color: var(--accent); }
+  .colloc .zh { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; }
+  tr:nth-child(even) { background: #f8f7f5; }
+  .highlight-row td { background: #eaf2f8; font-weight: 600; }
+
+  ul, ol { padding-left: 1.5rem; margin: 0.5rem 0 1rem; }
+  li { margin-bottom: 0.3rem; }
+
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+  .warn {
+    background: #fef9e7; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; border-left: 4px solid var(--orange);
+  }
+
+  .timeline {
+    display: flex; align-items: center; justify-content: space-between;
+    margin: 1.5rem 0; padding: 1rem;
+    background: var(--card); border-radius: 8px; border: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .timeline .point { text-align: center; flex: 1; min-width: 100px; padding: 0 0.3rem; }
+  .timeline .point .label { font-size: 0.8rem; color: var(--muted); }
+  .timeline .arrow { font-size: 1.2rem; color: var(--accent2); flex-shrink: 0; }
+  .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .comparison > div { padding: 1rem; border-radius: 8px; }
+  .comparison .past-perfect { background: #eaf2f8; border: 1px solid #bcd4e6; }
+  .comparison .past-simple { background: #fef9e7; border: 1px solid #f0e6c0; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>Lesson 14 · Do You Speak English?</span>
+</div>
+
+<h1>Lesson 14: Do You Speak English?</h1>
+<p class="lesson-meta">
+  📖 关键句型：过去完成时 (had done) &nbsp;|&nbsp; 📝 第 14 课 / 共 96 课
+</p>
+
+<!-- ===== TEXT ===== -->
+<h2>📜 课文 · Text</h2>
+
+<div class="text-box">
+<div class="en">
+<p><strong>Do You Speak English?</strong></p>
+<p>I had an amusing experience last year. After I had left a small village in the south of France, I drove on to the next town. On the way, a young man waved to me. I stopped and he asked me for a lift. As soon as he had got into the car, I said good morning to him in French. He replied in the same language. Apart from a few words, I do not know any French at all. Neither of us spoke during the journey. I had nearly reached the town, when the young man suddenly said, very slowly, "Do you speak English?" As I soon learnt, he was English himself!</p>
+</div>
+<div class="zh">
+<p><strong>你会说英语吗？</strong></p>
+<p>去年我有过一次有趣的经历。我离开法国南部的一个小村庄后，继续驶往下一个城镇。途中，一个年轻人向我招手。我停下来，他请求搭车。他一上车，我就用法语向他问早上好。他也用法语回答我。除了个别单词，我根本不会法语。旅途中我们谁也没说话。快要到镇上时，那个年轻人突然慢慢地问道："你会说英语吗？"我很快就知道了，他本人就是英国人！</p>
+</div>
+</div>
+
+<!-- ===== VOCABULARY ===== -->
+<h2>📝 词汇 · Vocabulary</h2>
+<div class="vocab-grid">
+  <div class="vocab-item"><span class="word">amusing</span><span class="phonetic">/əˈmjuːzɪŋ/</span><span class="def">adj. 有趣的，好笑的</span></div>
+  <div class="vocab-item"><span class="word">experience</span><span class="phonetic">/ɪkˈspɪəriəns/</span><span class="def">n. 经历；经验</span></div>
+  <div class="vocab-item"><span class="word">wave</span><span class="phonetic">/weɪv/</span><span class="def">v. 招手</span></div>
+  <div class="vocab-item"><span class="word">lift</span><span class="phonetic">/lɪft/</span><span class="def">n. 搭便车</span></div>
+  <div class="vocab-item"><span class="word">reply</span><span class="phonetic">/rɪˈplaɪ/</span><span class="def">v. 回答</span></div>
+  <div class="vocab-item"><span class="word">apart from</span><span class="phonetic">/əˈpɑːt frəm/</span><span class="def">除了……之外</span></div>
+  <div class="vocab-item"><span class="word">neither</span><span class="phonetic">/ˈnaɪðə/</span><span class="def">pron. 两者都不</span></div>
+  <div class="vocab-item"><span class="word">journey</span><span class="phonetic">/ˈdʒɜːni/</span><span class="def">n. 旅程</span></div>
+</div>
+
+<!-- ===== KEY STRUCTURE ===== -->
+<h2>🔑 关键句型：过去完成时 (Past Perfect Tense)</h2>
+
+<h3>什么是过去完成时？</h3>
+<p>
+过去完成时 (<strong>had + 过去分词</strong>) 表示<strong>"过去的过去"</strong>——在过去的某个时间<strong>之前</strong>已经完成的动作。
+</p>
+
+<div class="timeline">
+  <div class="point">
+    <div class="label">🚗 离开村庄</div>
+    <div style="font-weight:700;color:var(--accent2);">had left</div>
+    <div style="font-size:0.75rem;color:var(--muted);">（更早）</div>
+  </div>
+  <div class="arrow">→ 然后 →</div>
+  <div class="point">
+    <div class="label">🛣️ 驶向下一城镇</div>
+    <div style="font-weight:700;">drove on</div>
+    <div style="font-size:0.75rem;color:var(--muted);">（之后）</div>
+  </div>
+  <div class="arrow">→ 现在 →</div>
+  <div class="point">
+    <div class="label">📖 讲故事</div>
+    <div>现在时</div>
+  </div>
+</div>
+
+<p><strong>关键：</strong>两个动作都发生在过去，过去完成时告诉读者"哪个更早发生"。</p>
+
+<h3>结构公式</h3>
+<table>
+  <tr><th>句型</th><th>结构</th><th>例子</th></tr>
+  <tr><td><strong>肯定句</strong></td><td>主语 + had + 过去分词</td><td><em>I <u>had left</u> the village.</em></td></tr>
+  <tr><td><strong>否定句</strong></td><td>主语 + had not (hadn't) + 过去分词</td><td><em>I <u>hadn't left</u> yet.</em></td></tr>
+  <tr><td><strong>疑问句</strong></td><td>Had + 主语 + 过去分词?</td><td><em><u>Had</u> you <u>left</u> the village?</em></td></tr>
+</table>
+
+<h3>课文中使用过去完成时的句子</h3>
+<div class="ks-box">
+<ol>
+  <li>
+    <em><u>After</u> I <u>had left</u> a small village … I drove on to the next town.</em><br>
+    <span style="color:var(--muted);font-size:0.9rem;">先离开村庄 → 后开车去下一城</span>
+  </li>
+  <li>
+    <em><u>As soon as</u> he <u>had got</u> into the car, I said good morning.</em><br>
+    <span style="color:var(--muted);font-size:0.9rem;">先上车 → 后问候</span>
+  </li>
+  <li>
+    <em>I <u>had nearly reached</u> the town, when the young man suddenly said …</em><br>
+    <span style="color:var(--muted);font-size:0.9rem;">"几乎已经到达时"——用过去完成时强调"即将完成的状态"</span>
+  </li>
+</ol>
+</div>
+
+<div class="tip">
+💡 <strong>课文为什么不用过去完成时的地方？</strong><br>
+<em>waved / stopped / asked / replied / spoke / said / learnt</em> 都用一般过去时——因为这些动作是按时间顺序描述的，不需要强调"更早"。<br>
+<strong>规则：</strong>只有需要强调"某个过去动作之前"的时候，才用过去完成时。
+</div>
+
+<h3>过去完成时 vs 现在完成时 vs 一般过去时</h3>
+<table>
+  <tr><th></th><th>过去完成时 (had done)</th><th>现在完成时 (have done)</th><th>一般过去时 (did)</th></tr>
+  <tr>
+    <td><strong>参考时间</strong></td>
+    <td>以<strong>过去</strong>某时间为基准</td>
+    <td>以<strong>现在</strong>为基准</td>
+    <td>单纯的<strong>过去</strong>事实</td>
+  </tr>
+  <tr>
+    <td><strong>含义</strong></td>
+    <td>"过去的过去"</td>
+    <td>"从过去到现在"</td>
+    <td>"过去某时发生过"</td>
+  </tr>
+  <tr>
+    <td><strong>例子</strong></td>
+    <td><em>He <u>had left</u> when I arrived.</em><br>我到时他已经走了</td>
+    <td><em>He <u>has left</u>. (= He is not here.)</em><br>他已经走了（现在不在了）</td>
+    <td><em>He <u>left</u> yesterday.</em><br>他昨天走了</td>
+  </tr>
+</table>
+
+<h3>典型搭配：过去完成时的时间标志</h3>
+<table>
+  <tr><th>搭配</th><th>含义</th><th>课文例子</th></tr>
+  <tr><td><strong>after</strong> + 过去完成时</td><td>在……之后</td><td><em>After I had left…</em></td></tr>
+  <tr><td><strong>as soon as</strong> + 过去完成时</td><td>一……就……</td><td><em>As soon as he had got into the car…</em></td></tr>
+  <tr><td><strong>had nearly / almost … when</strong></td><td>几乎已经……这时突然</td><td><em>I had nearly reached the town, when…</em></td></tr>
+  <tr><td><strong>before</strong> + 过去完成时</td><td>在……之前（已经）</td><td><em>He had left before I arrived.</em></td></tr>
+  <tr><td><strong>by the time</strong> + 过去时间</td><td>到……时候（已经）</td><td><em>By the time I arrived, he had left.</em></td></tr>
+</table>
+
+<!-- ===== EXERCISES ===== -->
+<h2>✏️ 练习</h2>
+
+<div class="exercise">
+  <div class="q">练习 1：用过去完成时 (had + 过去分词) 填空</div>
+  <ol>
+    <li>After I _______________ (finish) my homework, I watched TV.</li>
+    <li>She _______________ (never/be) to London before she went there last year.</li>
+    <li>By the time we arrived, the movie _______________ (start).</li>
+    <li>He _______________ (already/eat) when I invited him to dinner.</li>
+    <li>As soon as she _______________ (leave) the house, it started to rain.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans1')">查看答案</button>
+  <div id="ans1" class="answer-box">
+    <strong>答案：</strong><br>
+    1. had finished（先做完作业 → 后看电视）<br>
+    2. had never been（去年之前没去过）<br>
+    3. had started（我们到的时候电影已经开始）<br>
+    4. had already eaten（邀请时他已经吃过了）<br>
+    5. had left（刚一离开家就开始下雨）
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 2：选择正确的时态（过去完成时 vs 一般过去时）</div>
+  <ol>
+    <li>After he ________ (finish / had finished) his work, he ________ (go / had gone) home.</li>
+    <li>I ________ (was / had been) to Paris twice before I ________ (moved / had moved) to France.</li>
+    <li>When I ________ (arrived / had arrived), he ________ (already left / had already left).</li>
+    <li>She ________ (said / had said) that she ________ (never saw / had never seen) such a beautiful place.</li>
+    <li>We ________ (had / had had) lunch before we ________ (continued / had continued) our journey.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans2')">查看答案</button>
+  <div id="ans2" class="answer-box">
+    <strong>答案：</strong><br>
+    1. After he <u>had finished</u> his work, he <u>went</u> home.<br>
+    2. I <u>had been</u> to Paris twice before I <u>moved</u> to France.<br>
+    3. When I <u>arrived</u>, he <u>had already left</u>.<br>
+    4. She <u>said</u> that she <u>had never seen</u> such a beautiful place.<br>
+    5. We <u>had had</u> lunch before we <u>continued</u> our journey.
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 3：改写句子（使用过去完成时避免时间混乱）</div>
+  <ol>
+    <li>First I left the village. Then I drove to the next town.</li>
+    <li>First he got into the car. Then I said good morning.</li>
+    <li>First she studied English. Then she went to London.</li>
+    <li>First the train left. Then we arrived at the station.</li>
+    <li>First he asked for a lift. Then I stopped the car.</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans3')">查看答案</button>
+  <div id="ans3" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. After I <u>had left</u> the village, I drove to the next town.<br>
+    2. As soon as he <u>had got</u> into the car, I said good morning.<br>
+    3. She <u>had studied</u> English before she went to London.<br>
+    4. The train <u>had left</u> when we arrived at the station.<br>
+    5. After he <u>had asked</u> for a lift, I stopped the car.
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="q">练习 4：中译英</div>
+  <ol>
+    <li>离开小村庄后，我继续开往下一个城镇。</li>
+    <li>他一上车，我就和他打了招呼。</li>
+    <li>我几乎快要到镇上的时候，他突然开口说话了。</li>
+    <li>我们两人一路上谁也没说话。</li>
+    <li>除了几个词，我根本不会法语。</li>
+  </ol>
+  <button class="btn green" onclick="toggleAnswer('ans4')">查看答案</button>
+  <div id="ans4" class="answer-box">
+    <strong>参考答案：</strong><br>
+    1. After I had left the small village, I drove on to the next town.<br>
+    2. As soon as he had got into the car, I said hello to him.<br>
+    3. I had nearly reached the town, when he suddenly spoke.<br>
+    4. Neither of us spoke during the journey.<br>
+    5. Apart from a few words, I do not know French at all.
+  </div>
+</div>
+
+<!-- ===== SPECIAL DIFFICULTIES ===== -->
+<h2>🔍 特殊难点</h2>
+
+<h3>1. ask vs ask for — "问"还是"要"？</h3>
+<table>
+  <tr><th>表达</th><th>含义</th><th>例子</th></tr>
+  <tr><td><strong>ask</strong> + 人 + 事</td><td>问某人某事</td><td><em>I <u>asked</u> him his name.</em></td></tr>
+  <tr><td><strong>ask for</strong> + 物</td><td>请求得到某物</td><td><em>He <u>asked for</u> a lift.</em></td></tr>
+  <tr><td><strong>ask for</strong> + 人</td><td>找某人（询问）</td><td><em>Someone <u>asked for</u> you.</em></td></tr>
+</table>
+<div class="note" style="background:#eaf2f8;border-radius:6px;padding:0.5rem 1rem;margin:0.5rem 0;font-size:0.9rem;">
+💡 <strong>助记：</strong>ask = "问一个问题"；ask for = "想要得到某物"
+</div>
+
+<h3>2. apart from vs except — "除了"的两种含义</h3>
+<table>
+  <tr><th>表达</th><th>含义</th><th>例子</th></tr>
+  <tr><td><strong>apart from</strong></td><td>除了……（还有/之外）<br>= besides + except 双重含义</td>
+    <td><em><u>Apart from</u> a few words, I don't know French.</em><br>= except: "除了几个词以外都不会"</td></tr>
+  <tr><td><strong>except</strong></td><td>除了……（排除在外）</td>
+    <td><em>Everyone <u>except</u> me knew French.</em><br>除了我以外别人都会</td></tr>
+  <tr><td><strong>besides</strong></td><td>除了……（还有）</td>
+    <td><em><u>Besides</u> French, he speaks English.</em><br>除了法语还会英语</td></tr>
+</table>
+
+<h3>3. neither of / either of / none of — 范围否定与肯定</h3>
+<table>
+  <tr><th>表达</th><th>范围</th><th>含义</th><th>例子</th></tr>
+  <tr><td><strong>neither of</strong></td><td>两者</td><td>（两者）都不</td><td><em><u>Neither of</u> us spoke.</em></td></tr>
+  <tr><td><strong>either of</strong></td><td>两者</td><td>（两者中）任一</td><td><em><u>Either of</u> us can help.</em></td></tr>
+  <tr><td><strong>none of</strong></td><td>三者或以上</td><td>（所有）都不</td><td><em><u>None of</u> them spoke.</em></td></tr>
+</table>
+<div class="note" style="background:#eaf2f8;border-radius:6px;padding:0.5rem 1rem;margin:0.5rem 0;font-size:0.9rem;">
+💡 <strong>记忆：</strong>n- 开头 = 否定 (neither/none)；either = 二选一
+</div>
+
+<h3>4. reply vs answer</h3>
+<ul>
+  <li><strong>reply</strong> = 回答、回应（稍正式，不及物动词，需要加 to）</li>
+  <li><strong>answer</strong> = 回答（及物动词，可直接加宾语）</li>
+  <li><em>He <u>replied</u> in the same language.</em>（× replied me → 不能说）</li>
+  <li><em>He <u>answered</u> my question.</em>（√ 可以直接说 answered my question）</li>
+</ul>
+
+<!-- ===== COLLOCATIONS ===== -->
+<h2>🔗 固定搭配 · Useful Collocations</h2>
+<div class="colloc">
+<table>
+  <tr><td class="en">have an experience</td><td class="zh">有一次经历</td></tr>
+  <tr><td class="en">in the south of</td><td class="zh">在……的南部</td></tr>
+  <tr><td class="en">on the way</td><td class="zh">在路上，途中</td></tr>
+  <tr><td class="en">wave to sb</td><td class="zh">向某人招手</td></tr>
+  <tr><td class="en">ask for a lift / give sb a lift</td><td class="zh">请求搭车 / 让某人搭车</td></tr>
+  <tr><td class="en">apart from</td><td class="zh">除了……</td></tr>
+  <tr><td class="en">neither of us</td><td class="zh">我们俩都不</td></tr>
+  <tr><td class="en">not … at all</td><td class="zh">一点也不……</td></tr>
+</table>
+</div>
+
+<!-- ===== SPEAKING ===== -->
+<h2>🎤 口语练习</h2>
+<div class="exercise" style="background:#eaf2f8;">
+  <div class="q">用过去完成时回答以下问题</div>
+  <ol>
+    <li>What had you done before you left home this morning?</li>
+    <li>Had you studied English before you started NCE 2?</li>
+    <li>What had you learned before Lesson 13?</li>
+    <li>Had you ever given a lift to a stranger before?</li>
+    <li>What had you done by the time you were 10 years old?</li>
+  </ol>
+</div>
+
+<hr>
+<h2>📌 本课要点回顾</h2>
+<ul>
+  <li>✅ 课文：有趣的搭车经历——两人全程无语，后来发现都会英语</li>
+  <li>✅ <strong>过去完成时 (had done)</strong>：表示"过去的过去"</li>
+  <li>✅ **结构：**肯定 had done / 否定 hadn't done / 疑问 Had...done?</li>
+  <li>✅ <strong>典型搭配：</strong>after / as soon as / had nearly…when / before / by the time</li>
+  <li>✅ ask vs ask for / apart from vs except / neither vs either vs none</li>
+</ul>
+
+<p style="text-align:center;color:var(--muted);margin-top:2rem;">
+  📖 下一课：Lesson 15: Good News<br>
+  有任何问题，告诉 AI 助教！
+</p>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === 'block') { box.style.display = 'none'; }
+  else { box.style.display = 'block'; }
+}
+</script>
+
+</body>
+</html>

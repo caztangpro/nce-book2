@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语主动语态与被动语态 · 时态对照表 · 新概念英语第二册</title>
+<style>
+  :root {
+    --bg: #faf9f7; --card: #ffffff; --accent: #1a5276;
+    --accent2: #2980b9; --text: #2c3e50; --muted: #7f8c8d;
+    --border: #e8e6e1; --highlight: #fef9e7; --green: #27ae60;
+    --orange: #e67e22; --red: #c0392b;
+    --active: #eaf2f8; --passive: #fef9e7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2rem; color: var(--accent);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.4rem; margin-bottom: 0.3rem;
+  }
+  .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+
+  h2 {
+    font-size: 1.3rem; color: var(--accent);
+    margin-top: 2rem; margin-bottom: 1rem;
+    border-left: 4px solid var(--accent2); padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.1rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+
+  .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .breadcrumb span { color: var(--accent2); font-weight: 600; }
+
+  /* ===== MAIN TABLE ===== */
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.6rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+  th { background: var(--accent); color: #fff; font-size: 0.9rem; }
+  tr:nth-child(even) { background: #f8f7f5; }
+
+  .tenses-table th:nth-child(1) { width: 16%; }
+  .tenses-table th:nth-child(2) { width: 28%; }
+  .tenses-table th:nth-child(3) { width: 28%; }
+  .tenses-table th:nth-child(4) { width: 28%; }
+
+  .tense-name { font-weight: 700; color: var(--accent); font-size: 0.9rem; }
+  .tense-num {
+    display: inline-block; width: 1.4rem; height: 1.4rem;
+    line-height: 1.4rem; text-align: center;
+    background: var(--accent2); color: #fff; border-radius: 50%;
+    font-size: 0.7rem; font-weight: 700; margin-right: 0.3rem;
+  }
+  .active-cell { background: var(--active); }
+  .passive-cell { background: var(--passive); }
+  .cell-label {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; margin-bottom: 0.2rem;
+  }
+  .cell-label.active { color: var(--accent2); }
+  .cell-label.passive { color: var(--orange); }
+  .formula { font-family: 'Courier New', monospace; font-weight: 700; }
+  .example { font-size: 0.9rem; color: var(--text); }
+  .example i { color: var(--accent); }
+  .highlight-row td { background: #eaf2f8; font-weight: 600; }
+  .sep-row td {
+    background: var(--accent); color: #fff; font-weight: 700;
+    text-align: center; font-size: 1rem; padding: 0.4rem;
+    border: none;
+  }
+
+  .tip {
+    background: #f0f4f8; border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem; color: var(--accent);
+  }
+  .warn {
+    background: #fef9e7; border: 1px solid #f0e6c0;
+    border-radius: 8px; padding: 0.8rem 1.2rem;
+    margin: 1rem 0; font-size: 0.9rem;
+  }
+  .warn strong { color: var(--orange); }
+  .note {
+    background: var(--active); border-radius: 8px;
+    padding: 0.6rem 1rem; margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .flow-diagram {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    margin: 1rem 0; justify-content: center;
+  }
+  .flow-step {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.8rem 1.2rem;
+    text-align: center; flex: 1; min-width: 120px;
+  }
+  .flow-step .step-label { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; }
+  .flow-step .step-val { font-weight: 700; color: var(--accent); }
+  .flow-arrow { font-size: 1.5rem; color: var(--accent2); align-self: center; }
+
+  ul { padding-left: 1.5rem; margin: 0.5rem 0 1rem; }
+  li { margin-bottom: 0.3rem; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+  @media print {
+    body { padding: 0; }
+    .container { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+  📘 新概念英语第二册 / <span>参考文档 · 主动语态与被动语态对照</span>
+</div>
+
+<h1>📐 时态与语态对照表</h1>
+<p class="subtitle">
+  Active <span style="display:inline-block;width:1rem;height:1rem;background:var(--active);border:1px solid #ccc;vertical-align:middle;margin:0 0.2rem;"></span>
+  vs
+  Passive <span style="display:inline-block;width:1rem;height:1rem;background:var(--passive);border:1px solid #ccc;vertical-align:middle;margin:0 0.2rem;"></span>
+  · 以动词 <strong>do</strong> 为例
+</p>
+
+<!-- ===== CORE TABLE ===== -->
+<h2>📊 八大时态主动/被动对照表</h2>
+
+<table class="tenses-table">
+  <tr>
+    <th>时态</th>
+    <th>主动语态 (Active)</th>
+    <th>被动语态 (Passive)</th>
+    <th>一句话记忆</th>
+  </tr>
+
+  <!-- Simple Present -->
+  <tr>
+    <td><span class="tense-name">① 一般现在时</span><br><span style="font-size:0.8rem;color:var(--muted);">Simple Present</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">do / does</div>
+      <div class="example"><i>I clean</i> the room every day.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">am / is / are + done</div>
+      <div class="example">The room <i>is cleaned</i> every day.</div>
+    </td>
+    <td class="note">
+      <strong>be (am/is/are) + 过去分词</strong><br>
+      最常用的被动语态基础
+    </td>
+  </tr>
+
+  <!-- Simple Past -->
+  <tr>
+    <td><span class="tense-name">② 一般过去时</span><br><span style="font-size:0.8rem;color:var(--muted);">Simple Past</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">did</div>
+      <div class="example"><i>I cleaned</i> the room yesterday.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">was / were + done</div>
+      <div class="example">The room <i>was cleaned</i> yesterday.</div>
+    </td>
+    <td class="note">
+      <strong>was/were + 过去分词</strong><br>
+      Lesson 10 被动语态入门
+    </td>
+  </tr>
+
+  <!-- Simple Future -->
+  <tr>
+    <td><span class="tense-name">③ 一般将来时</span><br><span style="font-size:0.8rem;color:var(--muted);">Simple Future</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">will do</div>
+      <div class="example"><i>I will clean</i> the room tomorrow.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">will be + done</div>
+      <div class="example">The room <i>will be cleaned</i> tomorrow.</div>
+    </td>
+    <td class="note">
+      <strong>will be + 过去分词</strong><br>
+      be → be 本身不变（因为是原形）
+    </td>
+  </tr>
+
+  <!-- Present Continuous -->
+  <tr>
+    <td><span class="tense-name">④ 现在进行时</span><br><span style="font-size:0.8rem;color:var(--muted);">Present Continuous</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">am / is / are + doing</div>
+      <div class="example"><i>I am cleaning</i> the room now.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">am / is / are + being + done</div>
+      <div class="example">The room <i>is being cleaned</i> now.</div>
+    </td>
+    <td class="note">
+      <strong>be + being + 过去分词</strong><br>
+      "正在被……"的关键是 being
+    </td>
+  </tr>
+
+  <!-- Past Continuous -->
+  <tr>
+    <td><span class="tense-name">⑤ 过去进行时</span><br><span style="font-size:0.8rem;color:var(--muted);">Past Continuous</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">was / were + doing</div>
+      <div class="example"><i>I was cleaning</i> the room at 3pm.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">was / were + being + done</div>
+      <div class="example">The room <i>was being cleaned</i> at 3pm.</div>
+    </td>
+    <td class="note">
+      <strong>was/were + being + 过去分词</strong><br>
+      Lesson 7 过去进行时 → 被动
+    </td>
+  </tr>
+
+  <!-- Future Continuous -->
+  <tr class="highlight-row">
+    <td><span class="tense-name">⑥ 将来进行时</span><br><span style="font-size:0.8rem;color:var(--muted);">Future Continuous</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">will be + doing</div>
+      <div class="example"><i>I will be cleaning</i> the room at 3pm tomorrow.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">will be being + done</div>
+      <div class="example">The room <i>will be being cleaned</i> at 3pm tomorrow.</div>
+    </td>
+    <td class="note">
+      <strong>⚠️ 很少用！</strong><br>
+      语法正确但现实中会改写（详见下文）
+    </td>
+  </tr>
+
+  <!-- Present Perfect -->
+  <tr>
+    <td><span class="tense-name">⑦ 现在完成时</span><br><span style="font-size:0.8rem;color:var(--muted);">Present Perfect</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">have / has + done</div>
+      <div class="example"><i>I have cleaned</i> the room already.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">have / has + been + done</div>
+      <div class="example">The room <i>has been cleaned</i> already.</div>
+    </td>
+    <td class="note">
+      <strong>have been + 过去分词</strong><br>
+      完成时被动 = have + been + done<br>
+      Lesson 4 现在完成时 → 被动
+    </td>
+  </tr>
+
+  <!-- Past Perfect -->
+  <tr>
+    <td><span class="tense-name">⑧ 过去完成时</span><br><span style="font-size:0.8rem;color:var(--muted);">Past Perfect</span></td>
+    <td class="active-cell">
+      <div class="cell-label active">ACTIVE</div>
+      <div class="formula">had + done</div>
+      <div class="example"><i>I had cleaned</i> the room before he arrived.</div>
+    </td>
+    <td class="passive-cell">
+      <div class="cell-label passive">PASSIVE</div>
+      <div class="formula">had + been + done</div>
+      <div class="example">The room <i>had been cleaned</i> before he arrived.</div>
+    </td>
+    <td class="note">
+      <strong>had been + 过去分词</strong><br>
+      与现在完成时被动相同模式
+    </td>
+  </tr>
+
+</table>
+
+<!-- ===== PATTERN ===== -->
+<h2>🧩 规律总结：被动语态的统一公式</h2>
+
+<p>所有被动语态都遵循同一个模式：</p>
+
+<div class="flow-diagram">
+  <div class="flow-step">
+    <div class="step-label">主动：时态标记</div>
+    <div class="step-val">will / have / is / was …</div>
+  </div>
+  <div class="flow-arrow">+</div>
+  <div class="flow-step">
+    <div class="step-label">核心操作</div>
+    <div class="step-val">b<strong>e</strong></div>
+  </div>
+  <div class="flow-arrow">+</div>
+  <div class="flow-step">
+    <div class="step-label">过去分词</div>
+    <div class="step-val"><strong>done</strong></div>
+  </div>
+</div>
+
+<p><strong>被动 = 把主动的动词换成 "be + 过去分词"，be 继承主动语态的时态形式。</strong></p>
+
+<ul>
+  <li>主动用 <strong>do / does</strong> → 被动 be = <strong>am / is / are</strong></li>
+  <li>主动用 <strong>did</strong> → 被动 be = <strong>was / were</strong></li>
+  <li>主动用 <strong>will do</strong> → 被动 be 不变 = <strong>be</strong>（因为是原形）</li>
+  <li>主动用 <strong>have done</strong> → 被动 be = <strong>been</strong></li>
+  <li>主动用 <strong>had done</strong> → 被动 be = <strong>been</strong>（had + been）</li>
+  <li>主动用 <strong>is doing</strong> → 被动 = <strong>is being done</strong>（此时 being 是进行时的标志）</li>
+  <li>主动用 <strong>was doing</strong> → 被动 = <strong>was being done</strong></li>
+  <li>主动用 <strong>will be doing</strong> → 被动 = <strong>will be being done</strong></li>
+</ul>
+
+<div class="tip">
+💡 <strong>核心记忆法：</strong><br>
+把 <strong>do</strong> 换成 <strong>be + done</strong>。<br>
+be 保留原来的时态 → 你就得到了被动语态。
+</div>
+
+<!-- ===== USE MORE / LESS ===== -->
+<h2>📈 各时态被动语态的使用频率</h2>
+
+<table>
+  <tr><th>使用频率</th><th>时态</th><th>说明</th></tr>
+  <tr>
+    <td style="color:var(--green);font-weight:700;">🔥 频繁</td>
+    <td>一般现在时被动 / 一般过去时被动</td>
+    <td>科技文章、新闻中最常见：<em>It <u>is said</u> that… / He <u>was born</u> in…</em></td>
+  </tr>
+  <tr>
+    <td style="color:var(--accent2);font-weight:700;">✅ 常见</td>
+    <td>现在完成时被动 / 一般将来时被动 / 现在进行时被动</td>
+    <td>正式写作和口语中合理使用</td>
+  </tr>
+  <tr>
+    <td style="color:var(--orange);font-weight:700;">⚠️ 较少</td>
+    <td>过去进行时被动 / 过去完成时被动</td>
+    <td>特定语境才出现，但不罕见</td>
+  </tr>
+  <tr>
+    <td style="color:var(--red);font-weight:700;">❌ 极少</td>
+    <td>将来进行时被动</td>
+    <td>语法存在，实际几乎不用（见下文）</td>
+  </tr>
+</table>
+
+<!-- ===== FUTURE CONTINUOUS PASSIVE ===== -->
+<h2>🎯 专题：将来进行时被动 (will be being done)</h2>
+
+<div class="warn">
+<strong>语法正确，但实际交流中几乎不用。</strong>
+</div>
+
+<p>为什么？因为 <strong>三个辅助动词堆在一起（will + be + being）</strong>，听起来非常笨重：</p>
+
+<p style="font-size:1.2rem;text-align:center;margin:1rem 0;">
+  <del style="color:var(--red);">The concert <u>will be being held</u> at 8pm.</del>
+</p>
+
+<p>英语母语者的<strong>改写策略</strong>：</p>
+
+<table>
+  <tr><th>改写方式</th><th>例子</th></tr>
+  <tr>
+    <td>改用一般将来被动</td>
+    <td><em>The concert <u>will be held</u> at 8pm.</em>（够了，不需要进行）</td>
+  </tr>
+  <tr>
+    <td>用 <strong>under + 名词</strong></td>
+    <td><em>The stadium <u>will be under construction</u> next year.</em></td>
+  </tr>
+  <tr>
+    <td>用 <strong>in progress</strong></td>
+    <td><em>The work <u>will be in progress</u> at that time.</em></td>
+  </tr>
+  <tr>
+    <td>用从句改写</td>
+    <td><em>At that time, construction of the stadium <u>will be ongoing</u>.</em></td>
+  </tr>
+</table>
+
+<!-- ===== BEING + BEEN ===== -->
+<h2>🧠 容易混淆的两组</h2>
+
+<h3>being done vs been done</h3>
+<table>
+  <tr><th></th><th>being done</th><th>been done</th></tr>
+  <tr><td><strong>时态</strong></td><td>进行时被动</td><td>完成时被动</td></tr>
+  <tr><td><strong>含义</strong></td><td>"正在被……"</td><td>"已经被……"</td></tr>
+  <tr><td><strong>结构</strong></td><td>be + <u>being</u> + done</td><td>have/had + <u>been</u> + done</td></tr>
+  <tr><td><strong>例子</strong></td><td>The house <em>is <u>being</u> painted</em> now.<br>房子正在被粉刷</td><td>The house <em>has <u>been</u> painted</em>.<br>房子已经被粉刷了</td></tr>
+</table>
+
+<div class="tip">
+💡 <strong>记忆：</strong><br>
+<strong>being</strong> = be + ing（进行中）→ "正在被"<br>
+<strong>been</strong> = be + en（完成标志）→ "已经被"
+</div>
+
+<!-- ===== NCE2 TIMELINE ===== -->
+<h2>📅 新概念英语第二册课程中已学的被动语态</h2>
+
+<table>
+  <tr><th>进度</th><th>课</th><th>语态/时态</th><th>课文句子</th></tr>
+  <tr>
+    <td>✅ 已学</td>
+    <td>Lesson 10</td>
+    <td>一般过去时被动</td>
+    <td><em>It <u>was made</u> in Germany.</em></td>
+  </tr>
+  <tr>
+    <td>↗️ 已涉及</td>
+    <td>Lesson 4 / 5</td>
+    <td>现在完成时主动</td>
+    <td>被动形式：<em>It <u>has been sailed</u> across the Atlantic.</em></td>
+  </tr>
+  <tr>
+    <td>📍 本课</td>
+    <td>Lesson 13</td>
+    <td>将来进行时主动 → 被动</td>
+    <td><em>Performances <u>will be being given</u>.</em>（语法上）</td>
+  </tr>
+  <tr>
+    <td>🔜 待学</td>
+    <td>Lesson 21+</td>
+    <td>更多被动语态深化</td>
+    <td>含情态动词的被动（can be done, must be done）</td>
+  </tr>
+</table>
+
+<!-- ===== PRACTICE ===== -->
+<h2>✏️ 快速自测</h2>
+
+<p>看看你能不能把下面主动句变成被动语态（可点击查看答案）：</p>
+
+<div class="warn" style="background:var(--card);">
+  <p><strong>① 一般现在时：</strong> People <u>speak</u> English all over the world.</p>
+  <button class="btn" onclick="toggleAnswer('q1')" style="margin-top:0.3rem;">查看答案</button>
+  <div id="q1" class="ans-box" style="display:none;margin-top:0.5rem;padding:0.5rem;background:var(--active);border-radius:6px;">
+    English <strong>is spoken</strong> all over the world.
+  </div>
+</div>
+
+<div class="warn" style="background:var(--card);">
+  <p><strong>② 现在进行时：</strong> Someone <u>is painting</u> the house.</p>
+  <button class="btn" onclick="toggleAnswer('q2')" style="margin-top:0.3rem;">查看答案</button>
+  <div id="q2" class="ans-box" style="display:none;margin-top:0.5rem;padding:0.5rem;background:var(--active);border-radius:6px;">
+    The house <strong>is being painted</strong>.
+  </div>
+</div>
+
+<div class="warn" style="background:var(--card);">
+  <p><strong>③ 现在完成时：</strong> They <u>have finished</u> the project.</p>
+  <button class="btn" onclick="toggleAnswer('q3')" style="margin-top:0.3rem;">查看答案</button>
+  <div id="q3" class="ans-box" style="display:none;margin-top:0.5rem;padding:0.5rem;background:var(--active);border-radius:6px;">
+    The project <strong>has been finished</strong>.
+  </div>
+</div>
+
+<div class="warn" style="background:var(--card);">
+  <p><strong>④ 将来进行时（思考题）：</strong> The band <u>will be performing</u> five songs.</p>
+  <button class="btn" onclick="toggleAnswer('q4')" style="margin-top:0.3rem;">查看答案</button>
+  <div id="q4" class="ans-box" style="display:none;margin-top:0.5rem;padding:0.5rem;background:var(--passive);border-radius:6px;">
+    Five songs <strong>will be being performed</strong>.<br>
+    ✅ 语法正确，但实际说 <em>Five songs <strong>will be performed</strong></em> 就够了。
+  </div>
+</div>
+
+<style>
+  .ans-box { display: none; }
+  .btn {
+    display: inline-block; padding: 0.3rem 1rem;
+    border: none; border-radius: 6px; cursor: pointer;
+    font-size: 0.8rem; background: var(--accent2); color: #fff;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--accent); }
+</style>
+
+<script>
+function toggleAnswer(id) {
+  var box = document.getElementById(id);
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+<hr>
+
+<footer>
+  新概念英语第二册 · Practice & Progress · 参考文档：时态与语态对照<br>
+  基于 Lesson 10（被动语态入门）+ Lesson 13（将来进行时）延伸
+</footer>
+
+</div>
+</body>
+</html>
